@@ -31,7 +31,7 @@ dashboardApp.controller('DashboardController', function DashboardController($sco
                 let tms = res.data.rows[0].mood;
                 console.log(tms);
                 //Team Action Volume??? in db was it already the mean data of the team?
-                let tav = res.data.rows[0].daily_action;
+                let tav = res.data.rows[0].team_action_volume;
                 console.log(tav);
                 //Player Action Volume???
                 let pav = tav * dau
