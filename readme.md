@@ -2,7 +2,7 @@
 npm install dotenv   
 npm install pg
 
-# Start:
+# Getting started:
   node server.js
 ## Main file:
 server.js => main server  
