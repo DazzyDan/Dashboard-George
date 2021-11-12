@@ -12,7 +12,8 @@ dashboardApp.controller('DashboardController', function DashboardController($sco
     $scope.bubbleData=[];
     //want a parameter to contain tun indicator
     
-    //Functions
+    //Main Functions
+	//1. Get Total User Numbers
     $http.get(URL_ALL_USERS)
             .then(function (response) {
                 console.log(response);
@@ -40,6 +41,36 @@ dashboardApp.controller('DashboardController', function DashboardController($sco
                 // $scope.indicators.push(newIndicator);
             });
 
+    /*
+	//Get all historical indicators of one choosen date
+    $scope.hisInd = function(){
+	 //transfer format to match up the type of database: 
+        //Date       
+        var newDate = $scope.dateSearch.getFullYear()+'-'+("0"+($scope.dateSearch.getMonth()+1)).slice(-2)+'-'+("0"+$scope.dateSearch.getDate()).slice(-2);
+        console.log(newDate);
+
+        $http.get(URL_INDICATORS + `newDate=${newDate}`)
+                .then((res)=>{
+                    // console.log(res.data.rows[0]);   
+                // console.log(res.data.rows[0].users.length);
+                //Daily Actual User
+                let dau = res.data.rows[0].users.length;
+                console.log(dau);
+                //Team Mood Scale
+                let tms = res.data.rows[0].mood;
+                console.log(tms);
+                //Player Action Volume=Average number
+                let pav = res.data.rows[0].daily_action;
+                console.log(pav);
+                //Team Action Volume= Sum of Player Action Volume
+                let tav = pav * dau
+                console.log(tav);
+                $scope.indicators = {"dau":dau,"tms":tms,"tav":tav,"pav":pav};
+                // $scope.indicators.push(newIndicator);
+                });
+ 
+*/
+    
     //  bubble
     $http.get(URL_BUBBLE)
             .then((res)=>{
