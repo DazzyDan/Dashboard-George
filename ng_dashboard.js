@@ -31,12 +31,12 @@ dashboardApp.controller('DashboardController', function DashboardController($sco
                 //Team Mood Scale
                 let tms = res.data.rows[0].mood;
                 console.log(tms);
-                //Team Action Volume??? in db was it already the mean data of the team?
-                let tav = res.data.rows[0].daily_action;
-                console.log(tav);
-                //Player Action Volume???
-                let pav = tav * dau
+                //Player Action Volume=Average number
+                let pav = res.data.rows[0].daily_action;
                 console.log(pav);
+                //Team Action Volume= Sum of Player Action Volume
+                let tav = pav * dau
+                console.log(tav);
                 $scope.indicators = {"dau":dau,"tms":tms,"tav":tav,"pav":pav};
                 // $scope.indicators.push(newIndicator);
             });
