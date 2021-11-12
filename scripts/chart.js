@@ -25,7 +25,7 @@ const labels = [
       {label:'Participation',
       backgroundColor: 'rgba(80, 194, 241, 1)',
       borderColor: 'rgba(98, 160, 255, 1)',
-          data:[-1,0,-0.2,1,0.1,1.2,1.7,1.8,2,2.5],
+          data:[1,0,0.2,1,0.1,1.2,1.7,1.8,2,2.5],
           fill:false,
           tension:0.5
       }]
@@ -38,7 +38,7 @@ const labels = [
           label:'Team mood value',
           backgroundColor: 'rgba(255, 0, 0, 1)',
           borderColor: 'rgba(200, 0, 0, 0.8)',
-          data:[2,2.1,2.3,2.5,1,0.3,0.2,0.3,-1,-1.5],
+          data:[2,2.1,2.3,2.5,1,0.3,0.2,0.3,1,1.5],
           fill:false,
           tension:0.5
   
