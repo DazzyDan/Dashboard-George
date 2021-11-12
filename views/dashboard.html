@@ -184,6 +184,22 @@ order: 2;
 flex-grow: 0;
 margin: 0px 25px;
 }
+	    
+ .addF{
+	/*Search date */
+  
+  /* Auto Layout */
+  
+  display: -webkit-inline-box;
+  position: absolute;
+  width: 350px;
+  height: 20px;
+  left: 1100px;
+  top: calc(50% - 305px/2 - 100px);
+  
+
+ }
+	    
 .indiF{
   /* Table / Indicator table */
   
@@ -305,6 +321,21 @@ color: red;
   </div>
 
 
+<!-- Search historical indicators of one chosen date -->
+	<!-- frame -->
+<form data-ng-submit="hisInd()">
+<div class="addF">
+	<label for="inputDate" class="col-form-label">Date: </label>
+<div class="col-sm-4"> 
+	<input type="date" id="inputDate" class="form-control" data-ng-model="dateSearch">
+</div>
+<div class="col-sm"> 
+	<button type="submit" value="Search" class="btn btn-primary">Search</button>
+</div>
+</div>
+</form>	
+	  
+	  
 	<!-- Indicator table -->
 	<!-- frame -->
 
