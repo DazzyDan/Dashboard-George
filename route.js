@@ -59,6 +59,21 @@ module.exports = (app, connection) => {
             };
         });
     });
+    
+    
+//????这个语法究竟是咋写的？？？？
+/*//get other indicators
+    app.get('/getIndicators/:date',(req,res)=>{
+        //sql
+        let sql = `SELECT * FROM Users_Daily_Log WHERE Date = '${$scope.dateSearch}';`;
+        //connect 
+        connection.query(sql, (err, result)=>{
+            if(!err){
+                res.json(result);
+            };
+        });  
+    });
+*/
 
     //get other indicators
     app.get('/getIndicators/:date',(req,res)=>{
