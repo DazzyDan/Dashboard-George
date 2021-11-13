@@ -20,7 +20,7 @@ dashboardApp.controller('DashboardController', function DashboardController($sco
                 $scope.tun = response.data;
             });
     //other indicators can use this list to store
-    // let newIndicator = {};
+    // default=>today
     $http.get(URL_INDICATORS+`2021-10-22T22:00:00.000Z`)
             .then((res)=>{
                 // console.log(res.data.rows[0]);   
@@ -41,15 +41,14 @@ dashboardApp.controller('DashboardController', function DashboardController($sco
                 // $scope.indicators.push(newIndicator);
             });
 
-    /*
-	//Get all historical indicators of one choosen date
+    //Get all historical indicators of one choosen date
     $scope.hisInd = function(){
 	 //transfer format to match up the type of database: 
         //Date       
         var newDate = $scope.dateSearch.getFullYear()+'-'+("0"+($scope.dateSearch.getMonth()+1)).slice(-2)+'-'+("0"+$scope.dateSearch.getDate()).slice(-2);
         console.log(newDate);
 
-        $http.get(URL_INDICATORS + `newDate=${newDate}`)
+        $http.get(URL_INDICATORS + `${newDate}`)
                 .then((res)=>{
                     // console.log(res.data.rows[0]);   
                 // console.log(res.data.rows[0].users.length);
@@ -69,7 +68,7 @@ dashboardApp.controller('DashboardController', function DashboardController($sco
                 // $scope.indicators.push(newIndicator);
                 });
  
-*/
+            };
     
     //  bubble
     $http.get(URL_BUBBLE)
