@@ -21,7 +21,10 @@ dashboardApp.controller('DashboardController', function DashboardController($sco
             });
     //other indicators can use this list to store
     // default=>today
-    $http.get(URL_INDICATORS+`2021-10-22T22:00:00.000Z`)
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    console.log(date);
+    $http.get(URL_INDICATORS+`${date}`)
             .then((res)=>{
                 // console.log(res.data.rows[0]);   
                 // console.log(res.data.rows[0].users.length);
