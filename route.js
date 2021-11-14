@@ -72,6 +72,20 @@ module.exports = (app, connection) => {
         });  
     });
 
+		app.get("/getRangeIndicators", (req, res) => {
+			const startDate = re.params.start_date
+			const endDate = re.params.end_date;
+
+			//sql
+			let sql = ``;
+			//connect
+			connection.query(sql, (err, result) => {
+				if (!err) {
+					res.json(result);
+				}
+			});
+		});
+
     //provide data to bubble chart
     app.get('/getBubble',(req,res)=>{
         let sql = `SELECT * FROM User_Mood;`;
