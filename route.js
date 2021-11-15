@@ -73,12 +73,12 @@ module.exports = (app, connection) => {
     });
 
 	app.get("/getRangeBubble/:start_date/:end_date", (req, res) => {
-		const startdate = req.params.start_date
-		const enddate = req.params.end_date;
+		const startDate = req.params.start_date
+		const endDate = req.params.end_date;
 
 		//sql
-		console.log("Start date: "+startdate+" ;  End date: "+enddate);
-            	let sql = `SELECT u.pseudo as username,u.avatar_image_from_avatars as avatar,c.color,n.participation FROM Users u,mood_color c,(SELECT d.username,ROUND(d.mood/d.day) as mood,ROUND(d.participation/d.day) as participation FROM (SELECT UserName[1] as username,SUM(Mood) as mood,SUM(Participation) AS participation,'${enddate}'::date - '${startdate}'::date +1 AS day FROM EachUsers_Daily_Log WHERE Date BETWEEN '${startdate}' AND '${enddate}' GROUP BY username) d) n WHERE u.id = n.username AND n.mood = c.moodscale;`;
+		console.log("Start date: "+startDate+" ;  End date: "+endDate);
+            	let sql = `SELECT u.pseudo as username,u.avatar_image_from_avatars as avatar,c.color,n.participation FROM Users u,mood_color c,(SELECT d.username,ROUND(d.mood/d.day) as mood,ROUND(d.participation/d.day) as participation FROM (SELECT UserName[1] as username,SUM(Mood) as mood,SUM(Participation) AS participation,'${endDate}'::date - '${startDate}'::date +1 AS day FROM EachUsers_Daily_Log WHERE Date BETWEEN '${startDate}' AND '${endDate}' GROUP BY username) d) n WHERE u.id = n.username AND n.mood = c.moodscale;`;
             
 		//connect
 		connection.query(sql, (err, result) => {
@@ -89,15 +89,7 @@ module.exports = (app, connection) => {
 		});
 	});
 
-    //provide data to bubble chart
-    app.get('/getBubble',(req,res)=>{
-        let sql = `SELECT * FROM User_Mood;`;
-        connection.query(sql,(err,result)=>{
-            if(!err){
-                res.json(result.rows);
-            };
-        });
-    });
+   
 };
 
 
