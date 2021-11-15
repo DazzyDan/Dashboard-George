@@ -8,7 +8,7 @@ dashboardApp.controller(
 		// Obtain html route
 		let URL_ALL_USERS = "http://localhost:8000/getAllUser";
 		let URL_INDICATORS = "http://localhost:8000/getIndicators/";
-		let URL_RANGE_INDICATORS = "http://localhost:8000/getRangeIndicators?";
+		let URL_RANGE_BUBBLE  = "http://localhost:8000/getRangeBubble/";
 		let URL_BUBBLE = "http://localhost:8000/getBubble";
 
 		$scope.indicators = [];
@@ -82,10 +82,11 @@ dashboardApp.controller(
 			let endDate = formatRangeDate(endDateStr);
 			$http
 				.get(
-					URL_RANGE_INDICATORS + `start_date=${startDate}&end_date=${endDate}`
+					URL_RANGE_BUBBLE + `${startDate}/${endDate}`
 				)
 				.then((res) => {
-					loadIndicators(res.data);
+					console.log(URL_RANGE_BUBBLE + `${startDate}/${endDate}`);
+                    			//not fixed: month need to -1
 				});
 		};
 
