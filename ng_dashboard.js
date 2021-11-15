@@ -8,7 +8,7 @@ dashboardApp.controller(
 		// Obtain html route
 		let URL_ALL_USERS = "http://localhost:8000/getAllUser";
 		let URL_INDICATORS = "http://localhost:8000/getIndicators/";
-		let URL_RANGE_BUBBLE  = "http://localhost:8000/getRangeBubble/";
+		let URL_RANGE_BUBBLE = "http://localhost:8000/getRangeBubble/";
 
 		$scope.indicators = [];
 		$scope.bubbleData = [];
@@ -20,7 +20,7 @@ dashboardApp.controller(
 			//console.log(response);
 			$scope.tun = response.data;
 		});
-		
+
 		//other indicators can use this list to store
 		// default=>today
 		var today = new Date();
@@ -76,16 +76,11 @@ dashboardApp.controller(
 			const [startDateStr, endDateStr] = $scope.dateSearchRange.split(" - ");
 			let startDate = formatRangeDate(startDateStr);
 			let endDate = formatRangeDate(endDateStr);
-			$http
-				.get(
-					URL_RANGE_BUBBLE + `${startDate}/${endDate}`
-				)
-				.then((res) => {
-					console.log(URL_RANGE_BUBBLE + `${startDate}/${endDate}`);
-                    			//not fixed: month need to -1
-				});
+			$http.get(URL_RANGE_BUBBLE + `${startDate}/${endDate}`).then((res) => {
+				console.log(URL_RANGE_BUBBLE + `${startDate}/${endDate}`);
+				//not fixed: month need to -1
+			});
 		};
-
 
 		/**
 		 * Take a string date in format dd/MM/YYYY and
@@ -95,7 +90,7 @@ dashboardApp.controller(
 		 */
 		function formatRangeDate(strDate) {
 			[day, month, year] = strDate.split("/");
-			const date = new Date(year, month, day);
+			const date = new Date(year, month-1, day);
 			return $filter("date")(date, "yyyy-MM-dd");
 		}
 	}
