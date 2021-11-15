@@ -9,7 +9,6 @@ dashboardApp.controller(
 		let URL_ALL_USERS = "http://localhost:8000/getAllUser";
 		let URL_INDICATORS = "http://localhost:8000/getIndicators/";
 		let URL_RANGE_BUBBLE  = "http://localhost:8000/getRangeBubble/";
-		let URL_BUBBLE = "http://localhost:8000/getBubble";
 
 		$scope.indicators = [];
 		$scope.bubbleData = [];
@@ -72,9 +71,6 @@ dashboardApp.controller(
 		};
 
 		//  bubble
-		$http.get(URL_BUBBLE).then((res) => {
-			$scope.bubbleData = res.data;
-		});
 
 		$scope.dateRangeChange = function () {
 			const [startDateStr, endDateStr] = $scope.dateSearchRange.split(" - ");
