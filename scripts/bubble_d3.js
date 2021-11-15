@@ -10,7 +10,7 @@ const svg = d3.select("#my_dataviz")
 
 // Read data
 
-  d3.json("/getBubble").then( function(data) {
+  d3.json("/getRangeBubble/2021-11-01/2021-11-03").then( function(data) {
     console.log(data);
     // Size scale for countries
     const size = d3.scaleLinear()
@@ -60,7 +60,7 @@ const svg = d3.select("#my_dataviz")
         .attr("cx", width / 2)
         .attr("cy", height / 2)
   
-        .style("fill", d => d.color_from_color_from_usermood[0])
+        .style("fill", d => d.color)
         .style("fill-opacity", 0.8)
         .attr("stroke", "none")
         .on("click", function(){
@@ -123,11 +123,11 @@ const svg = d3.select("#my_dataviz")
               .on("end", dragended))
         .text(d=>d.username)
         .attr("fill",function(d){
-              if(d.color_from_color_from_usermood[0]){
+              if(d.color){
   
-                  r = hexToRgb(d.color_from_color_from_usermood[0]).r
-                  g = hexToRgb(d.color_from_color_from_usermood[0]).g
-                  b = hexToRgb(d.color_from_color_from_usermood[0]).b
+                  r = hexToRgb(d.color).r
+                  g = hexToRgb(d.color).g
+                  b = hexToRgb(d.color).b
   
                   var o = Math.round(((parseInt(r) * 299) + (parseInt(g) * 587) + (parseInt(b) * 114)) /1000);
   
@@ -146,7 +146,7 @@ const svg = d3.select("#my_dataviz")
                     .data(data)
                     .join("svg:image")
                     .attr("xlink:href", function(d) {
-                      return d.avatar_image_from_avatar_image_from_username[0];
+                      return d.avatar;
                     })
                     .attr('x',width / 2)
                     .attr('y', height / 2)
