@@ -72,19 +72,22 @@ module.exports = (app, connection) => {
         });  
     });
 
-		app.get("/getRangeIndicators", (req, res) => {
-			const startDate = re.params.start_date
-			const endDate = re.params.end_date;
+	app.get("/getRangeIndicators/:start_date/:end_date", (req, res) => {
+		const startdate = req.params.start_date;
+		const enddate = req.params.end_date;
 
-			//sql
-			let sql = ``;
-			//connect
-			connection.query(sql, (err, result) => {
-				if (!err) {
-					res.json(result);
-				}
-			});
+		//sql
+		console.log("Start date: "+startdate+" ;  End date: "+enddate);
+            	let sql = `SELECT u.pseudo as username,u.avatars,c.color,n.participation FROM Users u,mood_color c,(SELECT d.username,ROUND(d.mood/d.day) as mood,ROUND(d.participation/d.day) as participation FROM (SELECT UserName[1] as username,SUM(Mood) as mood,SUM(Participation) AS participation,'${enddate}'::date - '${startdate}'::date +1 AS day FROM EachUsers_Daily_Log WHERE Date BETWEEN '${startdate}' AND '${enddate}' GROUP BY username) d) n WHERE u.id = n.username AND n.mood = c.moodscale;`;
+ 
+		//connect
+		connection.query(sql, (err, result) => {
+			if (!err) {
+				res.json(result.rows);
+	    			console.log(res);
+			}
 		});
+	});
 
     //provide data to bubble chart
     app.get('/getBubble',(req,res)=>{
