@@ -71,7 +71,7 @@ module.exports = (app, connection) => {
             };
         });  
     });
-// tests
+
 	app.get("/getRangeBubble/:start_date/:end_date", (req, res) => {
 		const startDate = req.params.start_date
 		const endDate = req.params.end_date;

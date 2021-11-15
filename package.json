@@ -12,10 +12,11 @@
     "express": "^4.17.1",
     "node": "^17.0.1",
     "node-fetch": "^3.0.0",
-    "nodemon": "^2.0.15",
     "pg": "^8.7.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
