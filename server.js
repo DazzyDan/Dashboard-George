@@ -18,17 +18,17 @@ app.engine('html', require('ejs').renderFile);
 //connection
 
 const connection = new Client({
-    host: "evening-soiree.sequindb.com",
-    user: "ru9q7fewoahv9r1",
-    database: "dbvjydxan6knsbw",
+    host: 'evening-soiree.sequindb.com',
+    user: process.env.PG_USER,
+    database: process.env.PG_DATABASE,
     password: process.env.PG_PASSWORD,
     port: 5432,
 });
 connection.connect((err) => {
     if (err) throw err;
-    
     console.log('Connected!');
   }); 
+  
 // load routes: define controller which act on db
 let routes = require('./route.js');
 routes(app, connection);

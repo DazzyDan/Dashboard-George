@@ -78,7 +78,7 @@ dashboardApp.controller(
 			let endDate = formatRangeDate(endDateStr);
 			$http.get(URL_RANGE_BUBBLE + `${startDate}/${endDate}`).then((res) => {
 				console.log(URL_RANGE_BUBBLE + `${startDate}/${endDate}`);
-				//not fixed: month need to -1
+				
 			});
 		};
 
