@@ -222,10 +222,12 @@ const labels = [
     function myFunction() {
       document.getElementById("UserChart").click();
       var TeamModal = new bootstrap.Modal(document.getElementById('teammodal'), {focus:true});
-          console.log(TeamModal);
-          TeamModal.show()
-          var TeamChart = new Chart(
-            document.getElementById('teamChart'),
-            config
-          );
+      console.log(TeamModal);
+      TeamModal.show();
+      var TeamChart = new Chart(
+        document.getElementById('teamChart'),
+        config
+      );
+      
     };
+    

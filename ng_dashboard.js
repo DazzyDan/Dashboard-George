@@ -9,7 +9,8 @@ dashboardApp.controller(
 		let URL_ALL_USERS = "http://localhost:8000/getAllUser";
 		let URL_INDICATORS = "http://localhost:8000/getIndicators/";
 		let URL_RANGE_BUBBLE = "http://localhost:8000/getRangeBubble/";
-
+		
+		$scope.dateTest = [];
 		$scope.indicators = [];
 		$scope.bubbleData = [];
 		//want a parameter to contain tun indicator
@@ -32,10 +33,11 @@ dashboardApp.controller(
 			today.getDate();
 		//console.log(date);
 		$http.get(URL_INDICATORS + `${date}`).then((res) => {
-			// console.log(res.data.rows[0]);
+			console.log(res.data.rows[0]);
 			// console.log(res.data.rows[0].users.length);
 			//Daily Actual User
 			loadIndicators(res.data);
+			console.log(res.data);
 		});
 
 		function loadIndicators(data) {
@@ -81,7 +83,8 @@ dashboardApp.controller(
 				
 			});
 		};
-
+		
+		  
 		/**
 		 * Take a string date in format dd/MM/YYYY and
 		 * returns it in the format YYYY-MM-dd

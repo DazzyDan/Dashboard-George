@@ -1,6 +1,6 @@
 //Bubbles
-const width = 1000
-const height = 700
+const width = 900
+const height = 600
 var size=600
 // append the svg object to the body of the page
 const svg = d3
@@ -10,7 +10,7 @@ const svg = d3
               .attr("height", height);
 
 // Read data  
-d3.json("/getRangeBubble/2021-11-01/2021-11-03")
+d3.json("/jsonFile/bubble.json")
   .then( 
     function(data) {
       console.log(data);

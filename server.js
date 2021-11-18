@@ -14,6 +14,10 @@ const PORT = process.env.PORT || 8000;
 // const AIRTABLE_BASE_ID =;
 app.set('view engine', 'html');
 app.use(express.json());
+//use static file in public
+app.use(express.static('public'));
+//use static file in scripts
+app.use(express.static('scripts'));
 app.engine('html', require('ejs').renderFile);
 //connection
 

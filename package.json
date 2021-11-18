@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "The dashboard for George",
   "main": "dashboard.js",
+  "type": "commonjs",
   "dependencies": {
     "airtable": "^0.11.1",
     "axios": "^0.24.0",
