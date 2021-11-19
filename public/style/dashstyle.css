@@ -6,15 +6,26 @@ body {
 
   background: #FFF4D0;
 }
+.titleDashboard{
+  position: absolute;
+  width: 168px;
+  height: 50px;
+  left: 8px;
+  top: 10px;
 
+  background: #FFFFFF;
+  border: 2px solid #000000;
+  border-radius: 50px;
+
+}
 .title {
   /* Dash Board */
 
   position: absolute;
   width: 110px;
   height: 28px;
-  left: 50px;
-  top: 23px;
+  left: 46px;
+  top: 12px;
 
   font-family: fantasy;
   font-style: normal;
@@ -31,13 +42,13 @@ body {
 /* Group 3 */
 .dashboard-icon {
   position: absolute;
-  left: 1%;
+  left: 5%;
   right: 96%;
   top: 3%;
   bottom: 93.29%;
 
   font-size: 1.8em;
-  color: #35a0f2;
+  color: #5cb85c;
 }
 
 .leftFigure{
@@ -244,15 +255,17 @@ body {
 
 /* Add bubbleborder */
 .bubble {
-background-image: -webkit-linear-gradient(45deg, white 25%, transparent 25%, transparent 75%, white 75%, white),
-  -webkit-linear-gradient(-45deg, white 25%, transparent 25%, transparent 75%, white 75%, white);
-background-size: 10px 10px;
-position: absolute;
-padding: 5px;
-width: 900px;
-height: 600px;
-left: 23px;
-top: 72px;
+  background-image: -webkit-linear-gradient(45deg, white 25%, transparent 25%, transparent 75%, white 75%, white),
+    -webkit-linear-gradient(-45deg, white 25%, transparent 25%, transparent 75%, white 75%, white);
+  background-size: 10px 10px;
+  border: 2px solid #000000;
+  border-radius: 50px;
+  position: absolute;
+  padding: 5px;
+  width: 900px;
+  height: 600px;
+  left: 23px;
+  top: 72px;
 }
 .datepick {
   position: absolute;

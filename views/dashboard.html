@@ -53,8 +53,10 @@
 
 
 <body>
-	<i class="bi bi-speedometer dashboard-icon"></i>
-	<p class="title">DashBoard</p>
+	<div class = "titleDashboard">
+		<i class="bi bi-speedometer dashboard-icon"></i>
+		<p class="title">DashBoard</p>
+	</div>
 	<div ng-controller="DashboardController" class="border">
 		<!-- Bubble Chart -->
 		<section class="bubble">
@@ -104,7 +106,7 @@
 						<input type="date" id="inputDate" class="form-control" data-ng-model="dateSearch" >
 					</div>
 					<div>
-						<button type="submit" value="Search" class="btn btn-primary">Search</button>
+						<button type="submit" value="Search" class="btn btn-success">Search</button>
 					</div>
 				</div>
 			</form>
