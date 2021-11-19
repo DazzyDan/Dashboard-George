@@ -257,6 +257,12 @@ top: 72px;
 .datepick {
   position: absolute;
   left: 350px;
+  top: 5px;
+
+}
+.refreshBtnColor{
+  position: absolute;
+  left: 540px;
   top: 0px;
 
 }

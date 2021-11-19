@@ -58,11 +58,13 @@
 	<div ng-controller="DashboardController" class="border">
 		<!-- Bubble Chart -->
 		<section class="bubble">
-		<input type="text" class="datepick" name="daterange" value="2021-11-01 - 2021-11-07" ng-model="dateSearchRange"
-		ng-change="dateRangeChange()" />
+			<input type="text" class="datepick" name="daterange" value="2021-11-01 - 2021-11-07" ng-model="dateSearchRange"
+			ng-change="dateRangeChange()" />
+			<button type="button" id = "refreshBtn" class="bi bi-arrow-clockwise btn btn-outline-primary refreshBtnColor"></button>
 			<div id="my_dataviz" >
 			</div>
 		</section>
+
 		<div class = "leftFigure">
 		<!-- PROFILE-->
 		<div class="id">
@@ -75,9 +77,7 @@
 					</div>
 				</div>
 			</div>
-			
-			
-			
+						
 			<!-- Thumbnail UserChart -->
 			<div class="userF">
 				<canvas id="UserChart" class="dialog" onclick="myFunction()"></canvas>
@@ -94,7 +94,6 @@
 				</div>
 			</div>
 
-
 			<!-- Search historical indicators of one chosen date -->
 			<!-- frame -->
 			<form data-ng-submit="hisInd()">
@@ -110,11 +109,9 @@
 				</div>
 			</form>
 
-
 			<!-- Indicator table -->
 			<!-- frame -->
-
-			<div class="indiF">
+			<div class="indiF" >
 
 				<table class="table table-borderless">
 					<tr>
@@ -153,7 +150,8 @@
 				</table>
 			</div>
 		</div>
-		<!-- Personal chart -->
+
+			<!-- Personal chart -->
 			<div id="mymodal" class="modal fade bd-example-modal-lg" tabindex="-1" aria-hidden="true">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">
@@ -170,7 +168,7 @@
 
 
 		<script type="text/javascript">
-
+			// bubble
 			$(function () {
 				$('input[name="daterange"]').daterangepicker({
 					opens: 'right',
@@ -184,6 +182,7 @@
 					document.querySelector('input[name="daterange"]').dispatchEvent(event);
 				});
 			});
+			// Give default value for indicator datepicker
 			$(document).ready( function() {
 				var now = new Date();
 				var month = (now.getMonth() + 1);               
@@ -195,7 +194,6 @@
 				var today = now.getFullYear() + '-' + month + '-' + day;
 				$('#inputDate').val(today);
 			});
-			
 		</script>
 		
 </body>

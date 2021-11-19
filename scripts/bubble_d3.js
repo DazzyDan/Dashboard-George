@@ -9,8 +9,11 @@ const svg = d3
               .attr("width", width)
               .attr("height", height);
 
-// Read data  
-d3.json("/jsonFile/bubble.json")
+// Read data
+///jsonFile/bubble.json
+function bubble(path){
+
+d3.json('/jsonFile/bubble.json')
   .then( 
     function(data) {
       console.log(data);
@@ -233,7 +236,8 @@ d3.json("/jsonFile/bubble.json")
           d.x += (d.cx - d.x) * alpha;
         };
       };
-
+      
+  
       //legend
       svg.append("text").attr("x", 60).attr("y", 100).text("Mood: - ").style("font-size", "15px").attr("alignment-baseline","middle");
       svg.append("circle").attr("cx",130).attr("cy",100).attr("r", 10).style("fill", "#32CD32");
@@ -249,3 +253,11 @@ d3.json("/jsonFile/bubble.json")
 
   }
 );
+};
+// Refresh bubble data
+d3.select("#refreshBtn")
+  .on("click", function () {   
+        svg.selectAll("g").remove();
+        bubble('/jsonFile/bubble.json');
+        console.log("Successful refresh !");  
+    });

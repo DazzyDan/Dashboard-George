@@ -212,8 +212,6 @@ const labels = [
   };
   
   
-  
-  
     var UserChart = new Chart(
       document.getElementById('UserChart'),
       config
