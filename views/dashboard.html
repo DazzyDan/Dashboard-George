@@ -117,37 +117,37 @@
 
 				<table class="table table-borderless">
 					<tr>
-
 						<td class="td1font" data-bs-toggle="tooltip" data-bs-placement="left" title="All registred users until now">
 							Total User Number</td>
 						<td class="td2font">{{tun}}</td>
-						<td><i class="bi bi-caret-up-fill upColor"></i></td>
+						<td><i class="bi bi-dash" ></i></td>
 					</tr>
 					<tr>
 						<td class="td1font" data-bs-placement="left" data-bs-toggle="tooltip"
 							title="Daily Actual User, this ratio indicates user stickiness">Daily Actual User</td>
 						<td class="td2font">{{indicators.dau}}</td>
-						<td><i class="bi bi-caret-down-fill downColor"></i></td>
+						
+						<td><i class="bi" ng-class="{'bi-caret-up-fill upColor' : compareIndicators[1].dau > compareIndicators[0].dau , 'bi-caret-down-fill downColor' : compareIndicators[1].dau < compareIndicators[0].dau , 'bi-dash' : compareIndicators[1].dau == compareIndicators[0].dau }" ></i></td>
 					</tr>
 
 					<tr>
 						<td class="td1font" data-bs-placement="left" data-bs-toggle="tooltip"
 							title="Average of mood scale in a team">Team Mood Scale</td>
 						<td class="td2font">{{indicators.tms}}</td>
-						<td><i class="bi bi-caret-up-fill upColor"></i></td>
+						<td><i class="bi" ng-class="{'bi-caret-up-fill upColor' : compareIndicators[1].tms > compareIndicators[0].tms , 'bi-caret-down-fill downColor' : compareIndicators[1].tms < compareIndicators[0].tms , 'bi-dash' : compareIndicators[1].tms == compareIndicators[0].tms }"></i></td>
 					</tr>
 
 					<tr>
 						<td class="td1font" data-bs-placement="left" data-bs-toggle="tooltip" title="Team amount of action per day">
 							Team Action Volume</td>
 						<td class="td2font">{{indicators.tav}}</td>
-						<td><i class="bi bi-caret-up-fill upColor"></i></td>
+						<td><i class="bi" ng-class="{'bi-caret-up-fill upColor' : compareIndicators[1].tav > compareIndicators[0].tav , 'bi-caret-down-fill downColor' : compareIndicators[1].tav < compareIndicators[0].tav , 'bi-dash' : compareIndicators[1].tav == compareIndicators[0].tav }"></i></td>
 					</tr>
 					<tr>
 						<td class="td1font" data-bs-placement="left" data-bs-toggle="tooltip"
 							title="Player amount of actions per day">Player Action Volume</td>
 						<td class="td2font">{{indicators.pav}}</td>
-						<td><i class="bi bi-caret-down-fill downColor"></i></td>
+						<td><i class="bi" ng-class="{'bi-caret-up-fill upColor' : compareIndicators[1].pav > compareIndicators[0].pav , 'bi-caret-down-fill downColor' : compareIndicators[1].pav < compareIndicators[0].pav , 'bi-dash' : compareIndicators[1].pav == compareIndicators[0].pav }"></i></td>
 					</tr>
 				</table>
 			</div>
