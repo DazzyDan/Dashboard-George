@@ -83,7 +83,7 @@ d3.json('/jsonFile/bubble.json')
                     .call(d3.drag() // call specific function when circle is dragged
                     .on("start", dragstarted)
                     .on("drag", dragged)
-                    .on("end", dragended));
+                    .on("end", dragended));          
 
       //add text to the group
       function getTextWidth(text, fontSize, fontFace) {
@@ -236,7 +236,15 @@ d3.json('/jsonFile/bubble.json')
           d.x += (d.cx - d.x) * alpha;
         };
       };
-      
+      // Zoom bubble
+      var zoom = d3.zoom()
+                   .scaleExtent([1, 8])
+                   .on('zoom', function(event) {
+                      svg.selectAll('g')
+                         .attr('transform', event.transform);
+                      });
+
+svg.call(zoom);   
   
       //legend
       svg.append("text").attr("x", 60).attr("y", 100).text("Mood: - ").style("font-size", "15px").attr("alignment-baseline","middle");
