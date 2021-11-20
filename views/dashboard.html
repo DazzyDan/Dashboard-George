@@ -3,13 +3,15 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="viewport"
-		content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" src="/dashboardCss">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+	<link rel="stylesheet" href="/style/dashstyle.css">
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"
 		integrity="sha512-7oYXeK0OxTFxndh0erL8FsjGvrl2VMDor6fVqzlLGfwOQQqTbYsGPv4ZZ15QHfSk80doyaM0ZJdvkyDcVO7KFA=="
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -19,38 +21,19 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
 		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js"
-		integrity="sha384-PsUw7Xwds7x08Ew3exXhqzbhuEYmA2xnwc8BuD6SEr+UmEHlX8/MCltYEodzWA4u"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-
-	<script src="https://d3js.org/d3.v6.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
-	<link rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-
+	<script src="https://d3js.org/d3.v6.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/d3-force@3"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<script src="/bubble_d3.js" defer></script>
 	<script src="/chart.js" defer></script>
-	<script src="/ng_dashboard.js"></script>
-	<link rel="stylesheet" href="/style/dashstyle.css">
+	<script src="/ng_dashboard.js"></script>	
 	
 </head>
-
 
 <body>
 	<div class = "titleDashboard">
@@ -169,35 +152,34 @@
 			</div>
 		</div>
 
-
-		<script type="text/javascript">
-			// bubble
-			$(function () {
-				$('input[name="daterange"]').daterangepicker({
-					opens: 'right',
-					// startDate: '01/11/2021', 
-					// endDate: '2021/12/01' 
-				});
-				$('input[name="daterange"]').on('apply.daterangepicker', function (ev, picker) {
-					$(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
-					const event = new Event('change');
-					// Dispatch event for angular.
-					document.querySelector('input[name="daterange"]').dispatchEvent(event);
-				});
+	<script type="text/javascript">
+		// bubble
+		$(function () {
+			$('input[name="daterange"]').daterangepicker({
+				opens: 'right',
+				// startDate: '01/11/2021', 
+				// endDate: '2021/12/01' 
 			});
-			// Give default value for indicator datepicker
-			$(document).ready( function() {
-				var now = new Date();
-				var month = (now.getMonth() + 1);               
-				var day = now.getDate();
-				if (month < 10) 
-					month = "0" + month;
-				if (day < 10) 
-					day = "0" + day;
-				var today = now.getFullYear() + '-' + month + '-' + day;
-				$('#inputDate').val(today);
+			$('input[name="daterange"]').on('apply.daterangepicker', function (ev, picker) {
+				$(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
+				const event = new Event('change');
+				// Dispatch event for angular.
+				document.querySelector('input[name="daterange"]').dispatchEvent(event);
 			});
-		</script>
+		});
+		// Give default value for indicator datepicker
+		$(document).ready( function() {
+			var now = new Date();
+			var month = (now.getMonth() + 1);               
+			var day = now.getDate();
+			if (month < 10) 
+				month = "0" + month;
+			if (day < 10) 
+				day = "0" + day;
+			var today = now.getFullYear() + '-' + month + '-' + day;
+			$('#inputDate').val(today);
+		});
+	</script>
 		
 </body>
 

@@ -37,8 +37,8 @@ d3.json('/jsonFile/bubble.json')
   
       // Three function that change the tooltip when user hover / move / leave a cell
       const mouseover = function(event, d) {
-        Tooltip.style("opacity", 1);
-        d3.select(this).style('stroke', '#222');
+        Tooltip.style("opacity", 2);
+        d3.select(this).style('stroke', '#FFF4D0');
       }
 
       const mousemove = function(event, d) {
@@ -116,9 +116,15 @@ d3.json('/jsonFile/bubble.json')
                     .style("font-family","Helvetica Neue")
                     .style("font-weight","Bold")
                     .style("font-size",d=>d.participation*2)
-                    .on("mouseover", mouseover) // What to do when hovered
-                    .on("mousemove", mousemove)
-                    .on("mouseleave", mouseleave)
+                    .on("click", function(){
+                      //trigger modal
+                      var myModal = new bootstrap.Modal(document.getElementById('mymodal'), {focus:true});
+                      myModal.show();
+                      var PerChart = new Chart(
+                        document.getElementById('PersonChart'),
+                        config2
+                      );
+                    })
                     .call(d3.drag() // call specific function when circle is dragged
                     .on("start", dragstarted)
                     .on("drag", dragged)
@@ -151,9 +157,15 @@ d3.json('/jsonFile/bubble.json')
                         .attr('y', height / 2)
                         .attr('width', function(d){return d.participation*5;})
                         .style('opacity', 0.75)
-                        .on("mouseover", mouseover) // What to do when hovered
-                        .on("mousemove", mousemove)
-                        .on("mouseleave", mouseleave)
+                        .on("click", function(){
+                          //trigger modal
+                          var myModal = new bootstrap.Modal(document.getElementById('mymodal'), {focus:true});
+                          myModal.show();
+                          var PerChart = new Chart(
+                            document.getElementById('PersonChart'),
+                            config2
+                          );
+                        })
                         .call(d3.drag() // call specific function when circle is dragged
                         .on("start", dragstarted)
                         .on("drag", dragged)
@@ -178,7 +190,7 @@ d3.json('/jsonFile/bubble.json')
         const simulation = d3
                              .forceSimulation()
                              .force("center", d3.forceCenter().x(width / 2).y(height / 2)) // Attraction to the center of the svg area
-                             .force("charge", d3.forceManyBody().strength(.1)) // Nodes are attracted one each other of value is > 0
+                             .force("charge", d3.forceManyBody().strength(300)) // Nodes are attracted one each other of value is > 0
                              .force("collide", d3
                                                   .forceCollide()
                                                   .strength(.2)
@@ -246,18 +258,18 @@ d3.json('/jsonFile/bubble.json')
 
       svg.call(zoom);   
   
-      //legend
-      svg.append("text").attr("x", 60).attr("y", 100).text("Mood: - ").style("font-size", "15px").attr("alignment-baseline","middle");
-      svg.append("circle").attr("cx",130).attr("cy",100).attr("r", 10).style("fill", "#32CD32");
-      svg.append("circle").attr("cx",160).attr("cy",100).attr("r", 10).style("fill", "#228B22");
-      svg.append("circle").attr("cx",190).attr("cy",100).attr("r", 10).style("fill", "#556B2F");
-      svg.append("text").attr("x", 220).attr("y", 100).text(" + ").style("font-size", "15px").attr("alignment-baseline","middle");
+      // //legend
+      // svg.append("text").attr("x", 60).attr("y", 100).text("Mood: - ").style("font-size", "15px").attr("alignment-baseline","middle");
+      // svg.append("circle").attr("cx",130).attr("cy",100).attr("r", 10).style("fill", "#32CD32");
+      // svg.append("circle").attr("cx",160).attr("cy",100).attr("r", 10).style("fill", "#228B22");
+      // svg.append("circle").attr("cx",190).attr("cy",100).attr("r", 10).style("fill", "#556B2F");
+      // svg.append("text").attr("x", 220).attr("y", 100).text(" + ").style("font-size", "15px").attr("alignment-baseline","middle");
 
-      svg.append("text").attr("x", 20).attr("y", 150).text("Participation: - ").style("font-size", "15px").attr("alignment-baseline","middle");
-      svg.append("circle").attr("cx",132).attr("cy",150).attr("r", 10).style("stroke","black").attr("fill","none");
-      svg.append("circle").attr("cx",170).attr("cy",150).attr("r", 20).style("stroke","black").attr("fill","none");
-      svg.append("circle").attr("cx",230).attr("cy",150).attr("r", 30).style("stroke","black").attr("fill","none");
-      svg.append("text").attr("x", 270).attr("y", 150).text(" + ").style("font-size", "15px").attr("alignment-baseline","middle");
+      // svg.append("text").attr("x", 20).attr("y", 150).text("Participation: - ").style("font-size", "15px").attr("alignment-baseline","middle");
+      // svg.append("circle").attr("cx",132).attr("cy",150).attr("r", 10).style("stroke","black").attr("fill","none");
+      // svg.append("circle").attr("cx",170).attr("cy",150).attr("r", 20).style("stroke","black").attr("fill","none");
+      // svg.append("circle").attr("cx",230).attr("cy",150).attr("r", 30).style("stroke","black").attr("fill","none");
+      // svg.append("text").attr("x", 270).attr("y", 150).text(" + ").style("font-size", "15px").attr("alignment-baseline","middle");
 
   }
 );
