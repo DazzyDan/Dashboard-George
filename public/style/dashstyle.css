@@ -22,9 +22,9 @@ body {
   width: 110px;
   height: 28px;
   left: 46px;
-  top: 12px;
+  top: 10px;
 
-  font-family: fantasy;
+  font-family: Schoolbell;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -54,7 +54,7 @@ body {
   height: 650px;
   right:0%;
   top: 0px;
-  /* border: 2px solid #000000; */
+  
 }
 
 .figureF {
@@ -78,7 +78,7 @@ body {
   bottom: 47.06%;
 
   background: #FFFFFF;
-  border: 2px solid #000000;
+  border: 2px solid #d8dbb1;
   border-radius: 50px;
 }
 
@@ -186,7 +186,7 @@ body {
   top: 150px;
 
   background: #FFFFFF;
-  border: 2px solid #000000;
+  border: 2px solid #d8dbb1;
   box-sizing: border-box;
   border-radius: 10px;
 }
@@ -211,7 +211,7 @@ body {
   top: 450px;
 
   background: #FFFFFF;
-  border: 2px solid #000000;
+  border: 2px solid #d8dbb1;
   box-sizing: border-box;
   border-radius: 10px;	
 }
@@ -241,10 +241,10 @@ body {
 
 /* Add bubbleborder */
 .bubble {
-  background-image: -webkit-linear-gradient(45deg, white 25%, transparent 25%, transparent 75%, white 75%, white),
-    -webkit-linear-gradient(-45deg, white 25%, transparent 25%, transparent 75%, white 75%, white);
-  background-size: 10px 10px;
-  border: 2px solid #000000;
+  background-image: url('/images/test2.gif');
+  background-size: cover; 
+  background-position:50% 50%;
+  border: 2px solid #d8dbb1;
   border-radius: 50px;
   position: absolute;
   padding: 5px;

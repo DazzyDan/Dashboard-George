@@ -244,7 +244,7 @@ d3.json('/jsonFile/bubble.json')
                          .attr('transform', event.transform);
                       });
 
-svg.call(zoom);   
+      svg.call(zoom);   
   
       //legend
       svg.append("text").attr("x", 60).attr("y", 100).text("Mood: - ").style("font-size", "15px").attr("alignment-baseline","middle");
