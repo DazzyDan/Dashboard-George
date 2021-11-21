@@ -1,35 +1,35 @@
 {
-  "name": "dashboard",
-  "version": "1.0.0",
-  "description": "The dashboard for George",
-  "main": "dashboard.js",
-  "type": "commonjs",
-  "dependencies": {
-    "airtable": "^0.11.1",
-    "axios": "^0.24.0",
-    "d3": "^7.1.1",
-    "dotenv": "^10.0.0",
-    "ejs": "^3.1.6",
-    "express": "^4.17.1",
-    "node": "^17.0.1",
-    "node-fetch": "^3.0.0",
-    "pg": "^8.7.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.15"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DazzyDan/TheHutch-desktop.git"
-  },
-  "author": "Qiudan",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/DazzyDan/TheHutch-desktop/issues"
-  },
-  "homepage": "https://github.com/DazzyDan/TheHutch-desktop#readme"
+	"name": "dashboard",
+	"version": "1.0.0",
+	"description": "The dashboard for George",
+	"main": "dashboard.js",
+	"type": "commonjs",
+	"dependencies": {
+		"airtable": "^0.11.1",
+		"axios": "^0.24.0",
+		"d3": "^7.1.1",
+		"dotenv": "^10.0.0",
+		"ejs": "^3.1.6",
+		"express": "^4.17.1",
+		"node": "^17.0.1",
+		"node-fetch": "^3.0.0",
+		"pg": "^8.7.1"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.15"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "nodemon server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/DazzyDan/TheHutch-desktop.git"
+	},
+	"author": "Qiudan",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/DazzyDan/TheHutch-desktop/issues"
+	},
+	"homepage": "https://github.com/DazzyDan/TheHutch-desktop#readme"
 }
