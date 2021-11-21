@@ -5,8 +5,10 @@
   "main": "dashboard.js",
   "type": "commonjs",
   "dependencies": {
+    "@popperjs/core": "^2.10.2",
     "airtable": "^0.11.1",
     "axios": "^0.24.0",
+    "bootstrap": "^5.1.3",
     "d3": "^7.1.1",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",

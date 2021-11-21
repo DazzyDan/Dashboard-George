@@ -264,3 +264,71 @@ body {
   left: 540px;
   top: 0px;
 }
+.leaves{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 21px;
+  top: 10px;
+  
+}
+.leafLeft{
+  position: absolute;
+  width: 27px;
+  height: 28px;
+  left: 20px;
+  top: 20px;
+}
+.leafMid{
+  position: absolute;
+  width: 27px;
+  height: 28px;
+  left: 50px;
+  top: 20px;
+}
+.leafRight{
+  position: absolute;
+  width: 27px;
+  height: 28px;
+  left: 80px;
+  top: 20px;
+}
+.leafSmall{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 20px;
+  top: 55px;
+}
+.leafMed{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 45px;
+  top: 55px;
+}
+.leafLarge{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 75px;
+  top: 55px;
+}
+.tooltip.show {
+  opacity: 1;
+}
+.tooltip-inner {
+  background-color: #d8dbb1;
+  color: #000000;
+  box-shadow: 0px 0px 4px black;
+  opacity: 1 !important;
+}
+.tooltip.bs-tooltip-top .tooltip-arrow::before {
+  border-top-color: #b6b98c;
+}
+.tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+  border-bottom-color: #b6b98c;
+}
+.tooltip.bs-tooltip-start .tooltip-arrow::before {
+  border-left-color: #b6b98c;
+}
