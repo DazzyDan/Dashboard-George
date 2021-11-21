@@ -3,54 +3,35 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="viewport"
-		content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" src="/dashboardCss">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+	<link rel="stylesheet" href="/style/dashstyle.css">
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"
 		integrity="sha512-7oYXeK0OxTFxndh0erL8FsjGvrl2VMDor6fVqzlLGfwOQQqTbYsGPv4ZZ15QHfSk80doyaM0ZJdvkyDcVO7KFA=="
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-		integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>	
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
 		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js"
-		integrity="sha384-PsUw7Xwds7x08Ew3exXhqzbhuEYmA2xnwc8BuD6SEr+UmEHlX8/MCltYEodzWA4u"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-
-	<script src="https://d3js.org/d3.v6.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
-	<link rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-
+	<script src="https://d3js.org/d3.v6.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/d3-force@3"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<script src="/bubble_d3.js" defer></script>
 	<script src="/chart.js" defer></script>
-	<script src="/ng_dashboard.js"></script>
-	<link rel="stylesheet" href="/style/dashstyle.css">
+	<script src="/ng_dashboard.js"></script>	
 	
 </head>
-
 
 <body>
 	<div class = "titleDashboard">
@@ -63,140 +44,198 @@
 			<input type="text" class="datepick" name="daterange" value="2021-11-01 - 2021-11-07" ng-model="dateSearchRange"
 			ng-change="dateRangeChange()" />
 			<button type="button" id = "refreshBtn" class="bi bi-arrow-clockwise btn btn-success refreshBtnColor"></button>
+			
+			<div class = "leaves">
+				<!-- Mood -->
+				<img class = "leafLeft" id = "plantLeft" onmouseover="newPlantLeft()" onmouseout="oldPlantLeft()" src="/images/plantLeft.png" data-bs-toggle="tooltip" data-bs-placement="top" title="Awsome">
+				<img class = "leafMid" id = "plantMid" onmouseover="newPlantMid()" onmouseout="oldPlantMid()" src="/images/plantMid.png"data-bs-toggle="tooltip" data-bs-placement="top" title="Calm">
+				<img class = "leafRight" id = "plantRight" onmouseover="newPlantRight()" onmouseout="oldPlantRight()" src="/images/plantRight.png" data-bs-toggle="tooltip" data-bs-placement="top" title="Sad">
+				<!-- Participation -->
+				<img class = "leafSmall" id = "plantSmall" onmouseover="newPlantSmall()" onmouseout="oldPlantSmall()" src="/images/leaf.png" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Participation low">
+				<img class = "leafMed" id = "plantMed" onmouseover="newPlantMed()" onmouseout="oldPlantMed()" src="/images/leaf.png" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Participation Medium">
+				<img class = "leafLarge" id = "plantLarge" onmouseover="newPlantLarge()" onmouseout="oldPlantLarge()" src="/images/leaf.png" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Participation High">
+				
+			</div>
+			<!-- <img class = "pot" scr = "/images/pot.png">	 -->
 			<div id="my_dataviz" >
+				<!-- <p> Yellowflower</p> -->
 			</div>
 		</section>
 
 		<div class = "leftFigure">
 		<!-- PROFILE-->
-		<div class="id">
-			<div class="figureF">
-				<div class="frameF">
-					<div class="figureLayout">
-						<img src="/images/george.png" class="imgL">
-						<i class="figureN">GEORGE</i>
-						<i class="bi bi-list button " role="button"></i>
-					</div>
+		<div class="figureF">
+			<div class="frameF">
+				<div class="figureLayout">
+					<img src="/images/george.png" class="imgL">
+					<i class="figureN">GEORGE</i>
+					<i class="bi bi-list button " role="button"></i>
 				</div>
-			</div>
-						
-			<!-- Thumbnail UserChart -->
-			<div class="userF">
-				<canvas id="UserChart" class="dialog" onclick="myFunction()"></canvas>
-				<div id="dialog_large_chart"></div>
-			</div>
-			<!-- Modal UserChart -->
-			<div id="teammodal" class="modal fade bd-example-modal-lg" tabindex="-1">
-				<div class="modal-dialog modal-lg">
-					<div class="modal-content">
-						<div class="modal-body">
-							<canvas id="teamChart"></canvas>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Search historical indicators of one chosen date -->
-			<!-- frame -->
-			<form data-ng-submit="hisInd()">
-				<div class="addF">
-					<!-- <label for="inputDate" class="col-form-label">Date: </label> -->
-					<div class="col-sm-6">
-						<!-- default value is today's date -->
-						<input type="date" id="inputDate" class="form-control" data-ng-model="dateSearch" >
-					</div>
-					<div>
-						<button type="submit" value="Search" class="btn btn-success">Search</button>
-					</div>
-				</div>
-			</form>
-
-			<!-- Indicator table -->
-			<!-- frame -->
-			<div class="indiF" >
-
-				<table class="table table-borderless">
-					<tr>
-
-						<td class="td1font" data-bs-toggle="tooltip" data-bs-placement="left" title="All registred users until now">
-							Total User Number</td>
-						<td class="td2font">{{tun}}</td>
-						<td><i class="bi bi-caret-up-fill upColor"></i></td>
-					</tr>
-					<tr>
-						<td class="td1font" data-bs-placement="left" data-bs-toggle="tooltip"
-							title="Daily Actual User, this ratio indicates user stickiness">Daily Actual User</td>
-						<td class="td2font">{{indicators.dau}}</td>
-						<td><i class="bi bi-caret-down-fill downColor"></i></td>
-					</tr>
-
-					<tr>
-						<td class="td1font" data-bs-placement="left" data-bs-toggle="tooltip"
-							title="Average of mood scale in a team">Team Mood Scale</td>
-						<td class="td2font">{{indicators.tms}}</td>
-						<td><i class="bi bi-caret-up-fill upColor"></i></td>
-					</tr>
-
-					<tr>
-						<td class="td1font" data-bs-placement="left" data-bs-toggle="tooltip" title="Team amount of action per day">
-							Team Action Volume</td>
-						<td class="td2font">{{indicators.tav}}</td>
-						<td><i class="bi bi-caret-up-fill upColor"></i></td>
-					</tr>
-					<tr>
-						<td class="td1font" data-bs-placement="left" data-bs-toggle="tooltip"
-							title="Player amount of actions per day">Player Action Volume</td>
-						<td class="td2font">{{indicators.pav}}</td>
-						<td><i class="bi bi-caret-down-fill downColor"></i></td>
-					</tr>
-				</table>
 			</div>
 		</div>
-
-			<!-- Personal chart -->
-			<div id="mymodal" class="modal fade bd-example-modal-lg" tabindex="-1" aria-hidden="true">
-				<div class="modal-dialog modal-lg">
-					<div class="modal-content">
-						<!-- <div class="modal-header">
-							<button type="button" id = "perBtnClosePopup" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
-						</div> -->
-						<div class="modal-body">
-							<canvas id="PersonChart"></canvas>
-						</div>
+					
+		<!-- Thumbnail UserChart -->
+		<div class="userF">
+			<canvas id="UserChart" class="dialog" onclick="myFunction()"></canvas>
+			<div id="dialog_large_chart"></div>
+		</div>
+		<!-- Modal UserChart -->
+		<div id="teammodal" class="modal fade bd-example-modal-lg" tabindex="-1">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-body">
+						<canvas id="teamChart"></canvas>
 					</div>
 				</div>
 			</div>
 		</div>
 
+		<!-- Search historical indicators of one chosen date -->
+		<!-- frame -->
+		<form data-ng-submit="hisInd()">
+			<div class="addF">
+				<!-- <label for="inputDate" class="col-form-label">Date: </label> -->
+				<div class="col-sm-6">
+					<!-- default value is today's date -->
+					<input type="date" id="inputDate" class="form-control" data-ng-model="dateSearch" >
+				</div>
+				<div>
+					<button type="submit" value="Search" class="btn btn-success">Search</button>
+				</div>
+			</div>
+		</form>
 
-		<script type="text/javascript">
-			// bubble
-			$(function () {
-				$('input[name="daterange"]').daterangepicker({
-					opens: 'right',
-					// startDate: '01/11/2021', 
-					// endDate: '2021/12/01' 
-				});
-				$('input[name="daterange"]').on('apply.daterangepicker', function (ev, picker) {
-					$(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
-					const event = new Event('change');
-					// Dispatch event for angular.
-					document.querySelector('input[name="daterange"]').dispatchEvent(event);
-				});
+		<!-- Indicator table -->
+		<!-- frame -->
+		<div class="indiF" >
+
+			<table class="table table-borderless">
+				<tr>
+					<td class="td1font" data-bs-toggle="tooltip" data-bs-placement="left" title="All registred users until now">
+						Total User Number</td>
+					<td class="td2font">{{tun}}</td>
+					<td><i class="bi bi-dash" ></i></td>
+				</tr>
+				<tr>
+					<td class="td1font" data-bs-placement="left" data-bs-toggle="tooltip"
+						title="Daily Actual User, this ratio indicates user stickiness">Daily Actual User</td>
+					<td class="td2font">{{indicators.dau}}</td>
+					
+					<td><i class="bi" ng-class="{'bi-caret-up-fill upColor' : compareIndicators[1].dau > compareIndicators[0].dau , 'bi-caret-down-fill downColor' : compareIndicators[1].dau < compareIndicators[0].dau , 'bi-dash' : compareIndicators[1].dau == compareIndicators[0].dau }" ></i></td>
+				</tr>
+
+				<tr>
+					<td class="td1font" data-bs-placement="left" data-bs-toggle="tooltip"
+						title="Average of mood scale in a team">Team Mood Scale</td>
+					<td class="td2font">{{indicators.tms}}</td>
+					<td><i class="bi" ng-class="{'bi-caret-up-fill upColor' : compareIndicators[1].tms > compareIndicators[0].tms , 'bi-caret-down-fill downColor' : compareIndicators[1].tms < compareIndicators[0].tms , 'bi-dash' : compareIndicators[1].tms == compareIndicators[0].tms }"></i></td>
+				</tr>
+
+				<tr>
+					<td class="td1font" data-bs-placement="left" data-bs-toggle="tooltip" title="Team amount of action per day">
+						Team Action Volume</td>
+					<td class="td2font">{{indicators.tav}}</td>
+					<td><i class="bi" ng-class="{'bi-caret-up-fill upColor' : compareIndicators[1].tav > compareIndicators[0].tav , 'bi-caret-down-fill downColor' : compareIndicators[1].tav < compareIndicators[0].tav , 'bi-dash' : compareIndicators[1].tav == compareIndicators[0].tav }"></i></td>
+				</tr>
+				<tr>
+					<td class="td1font" data-bs-placement="left" data-bs-toggle="tooltip"
+						title="Player amount of actions per day">Player Action Volume</td>
+					<td class="td2font">{{indicators.pav}}</td>
+					<td><i class="bi" ng-class="{'bi-caret-up-fill upColor' : compareIndicators[1].pav > compareIndicators[0].pav , 'bi-caret-down-fill downColor' : compareIndicators[1].pav < compareIndicators[0].pav , 'bi-dash' : compareIndicators[1].pav == compareIndicators[0].pav }"></i></td>
+				</tr>
+			</table>
+		</div>
+
+		<!-- Personal chart -->
+		<div id="mymodal" class="modal fade bd-example-modal-lg" tabindex="-1" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<!-- <div class="modal-header">
+						<button type="button" id = "perBtnClosePopup" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+					</div> -->
+					<div class="modal-body">
+						<canvas id="PersonChart"></canvas>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+
+	<script type="text/javascript">
+		// bubble
+		$(function () {
+			$('input[name="daterange"]').daterangepicker({
+				opens: 'right',
+				// startDate: '01/11/2021', 
+				// endDate: '2021/12/01' 
 			});
-			// Give default value for indicator datepicker
-			$(document).ready( function() {
-				var now = new Date();
-				var month = (now.getMonth() + 1);               
-				var day = now.getDate();
-				if (month < 10) 
-					month = "0" + month;
-				if (day < 10) 
-					day = "0" + day;
-				var today = now.getFullYear() + '-' + month + '-' + day;
-				$('#inputDate').val(today);
+			$('input[name="daterange"]').on('apply.daterangepicker', function (ev, picker) {
+				$(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
+				const event = new Event('change');
+				// Dispatch event for angular.
+				document.querySelector('input[name="daterange"]').dispatchEvent(event);
 			});
-		</script>
+		});
+		// Give default value for indicator datepicker
+		$(document).ready( function() {
+			var now = new Date();
+			var month = (now.getMonth() + 1);               
+			var day = now.getDate();
+			if (month < 10) 
+				month = "0" + month;
+			if (day < 10) 
+				day = "0" + day;
+			var today = now.getFullYear() + '-' + month + '-' + day;
+			$('#inputDate').val(today);
+		});
+
+		//Mood legend
+		function newPlantLeft(){
+			document.getElementById("plantLeft").src = "/images/happyPlant.png";
+		};
+		function oldPlantLeft(){
+			document.getElementById("plantLeft").src = "/images/plantLeft.png";
+		};
+		function newPlantMid(){
+			document.getElementById("plantMid").src = "/images/neutralPlant.png";
+		};
+		function oldPlantMid(){
+			document.getElementById("plantMid").src = "/images/plantMid.png";
+		};
+		function newPlantRight(){
+			document.getElementById("plantRight").src = "/images/sadPlant.png";
+		};
+		function oldPlantRight(){
+			document.getElementById("plantRight").src = "/images/plantRight.png";
+		};
+		//Participation legend
+		function newPlantSmall(){
+			document.getElementById("plantSmall").src = "/images/small.png";
+		};
+		function oldPlantSmall(){
+			document.getElementById("plantSmall").src = "/images/leaf.png";
+		};
+		function newPlantMed(){
+			document.getElementById("plantMed").src = "/images/medium.png";
+		};
+		function oldPlantMed(){
+			document.getElementById("plantMed").src = "/images/leaf.png";
+		};
+		function newPlantLarge(){
+			document.getElementById("plantLarge").src = "/images/large.png";
+		};
+		function oldPlantLarge(){
+			document.getElementById("plantLarge").src = "/images/leaf.png";
+		};
+		
+		//Tooltip
+		var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+		var tooltipList = tooltipTriggerList.map(
+			function (tooltipTriggerEl) {
+				return new bootstrap.Tooltip(tooltipTriggerEl)
+			}
+		);
+	</script>
 		
 </body>
 

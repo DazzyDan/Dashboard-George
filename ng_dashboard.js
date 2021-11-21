@@ -13,7 +13,8 @@ dashboardApp.controller(
 		$scope.dateTest = [];
 		$scope.indicators = [];
 		$scope.bubbleData = [];
-		//want a parameter to contain tun indicator
+		$scope.compareIndicators = [];
+
 
 		//Main Functions
 		//1. Get Total User Numbers
@@ -21,6 +22,9 @@ dashboardApp.controller(
 			//console.log(response);
 			$scope.tun = response.data;
 		});
+
+		//compare TUN with the last one??
+		
 
 		//other indicators can use this list to store
 		// default=>today
@@ -39,7 +43,7 @@ dashboardApp.controller(
 			loadIndicators(res.data);
 			console.log(res.data);
 		});
-
+	
 		function loadIndicators(data) {
 			let dau = data.rows[0].users.length;
 			console.log("dau", dau);
@@ -53,7 +57,27 @@ dashboardApp.controller(
 			let tav = pav * dau;
 			console.log("tav", tav);
 			$scope.indicators = { dau: dau, tms: tms, tav: tav, pav: pav };
-		}
+			addComparedIndicator($scope.indicators);
+		};
+
+		//compare with yesterday??
+
+		// Save the current one indicator and the one before it
+		function addComparedIndicator(data){
+			if ($scope.compareIndicators.length < 2){
+				$scope.compareIndicators.push(data);
+				console.log('Push one data');
+				// console.log($scope.compareIndicators);
+				
+			} else {
+				let tmp = $scope.compareIndicators[1];
+				$scope.compareIndicators = [];
+				$scope.compareIndicators.push(tmp);
+				$scope.compareIndicators.push(data);
+				console.log('Old data erase and push new data');
+				// console.log($scope.compareIndicators);
+			};
+		};
 
 		//Get all historical indicators of one choosen date
 		$scope.hisInd = function () {
