@@ -47,13 +47,13 @@
 			
 			<div class = "leaves">
 				<!-- Mood -->
-				<img class = "leafLeft" id = "plantLeft" onmouseover="newPlantLeft()" onmouseout="oldPlantLeft()" src="/images/plantLeft.png" data-bs-toggle="tooltip" data-bs-placement="top" title="Awsome">
-				<img class = "leafMid" id = "plantMid" onmouseover="newPlantMid()" onmouseout="oldPlantMid()" src="/images/plantMid.png"data-bs-toggle="tooltip" data-bs-placement="top" title="Calm">
-				<img class = "leafRight" id = "plantRight" onmouseover="newPlantRight()" onmouseout="oldPlantRight()" src="/images/plantRight.png" data-bs-toggle="tooltip" data-bs-placement="top" title="Sad">
+				<img class = "leafLeft" id = "plantLeft" onmouseover="newPlantLeft()" onmouseout="oldPlantLeft()" src="/images/awsome.png" data-bs-toggle="tooltip" data-bs-placement="top" title="Awsome">
+				<img class = "leafMid" id = "plantMid" onmouseover="newPlantMid()" onmouseout="oldPlantMid()" src="/images/calm.png"data-bs-toggle="tooltip" data-bs-placement="top" title="Calm">
+				<img class = "leafRight" id = "plantRight" onmouseover="newPlantRight()" onmouseout="oldPlantRight()" src="/images/sad.png" data-bs-toggle="tooltip" data-bs-placement="top" title="Sad">
 				<!-- Participation -->
-				<img class = "leafSmall" id = "plantSmall" onmouseover="newPlantSmall()" onmouseout="oldPlantSmall()" src="/images/leaf.png" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Participation low">
-				<img class = "leafMed" id = "plantMed" onmouseover="newPlantMed()" onmouseout="oldPlantMed()" src="/images/leaf.png" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Participation Medium">
-				<img class = "leafLarge" id = "plantLarge" onmouseover="newPlantLarge()" onmouseout="oldPlantLarge()" src="/images/leaf.png" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Participation High">
+				<img class = "leafSmall" id = "plantSmall" onmouseover="newPlantSmall()" onmouseout="oldPlantSmall()" src="/images/circle.png" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Participation low">
+				<img class = "leafMed" id = "plantMed" onmouseover="newPlantMed()" onmouseout="oldPlantMed()" src="/images/circle.png" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Participation Medium">
+				<img class = "leafLarge" id = "plantLarge" onmouseover="newPlantLarge()" onmouseout="oldPlantLarge()" src="/images/circle.png" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Participation High">
 				
 			</div>
 			<!-- <img class = "pot" scr = "/images/pot.png">	 -->
@@ -194,38 +194,38 @@
 			document.getElementById("plantLeft").src = "/images/happyPlant.png";
 		};
 		function oldPlantLeft(){
-			document.getElementById("plantLeft").src = "/images/plantLeft.png";
+			document.getElementById("plantLeft").src = "/images/awsome.png";
 		};
 		function newPlantMid(){
 			document.getElementById("plantMid").src = "/images/neutralPlant.png";
 		};
 		function oldPlantMid(){
-			document.getElementById("plantMid").src = "/images/plantMid.png";
+			document.getElementById("plantMid").src = "/images/calm.png";
 		};
 		function newPlantRight(){
 			document.getElementById("plantRight").src = "/images/sadPlant.png";
 		};
 		function oldPlantRight(){
-			document.getElementById("plantRight").src = "/images/plantRight.png";
+			document.getElementById("plantRight").src = "/images/sad.png";
 		};
 		//Participation legend
 		function newPlantSmall(){
 			document.getElementById("plantSmall").src = "/images/small.png";
 		};
 		function oldPlantSmall(){
-			document.getElementById("plantSmall").src = "/images/leaf.png";
+			document.getElementById("plantSmall").src = "/images/circle.png";
 		};
 		function newPlantMed(){
 			document.getElementById("plantMed").src = "/images/medium.png";
 		};
 		function oldPlantMed(){
-			document.getElementById("plantMed").src = "/images/leaf.png";
+			document.getElementById("plantMed").src = "/images/circle.png";
 		};
 		function newPlantLarge(){
 			document.getElementById("plantLarge").src = "/images/large.png";
 		};
 		function oldPlantLarge(){
-			document.getElementById("plantLarge").src = "/images/leaf.png";
+			document.getElementById("plantLarge").src = "/images/circle.png";
 		};
 		
 		//Tooltip

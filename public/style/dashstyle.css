@@ -241,7 +241,7 @@ body {
 
 /* Add bubbleborder */
 .bubble {
-  background-image: url('/images/bubbleBg.gif');
+  background-image: url('/images/circleBg.png');
   background-size: cover; 
   background-position:50% 50%;
   border: 2px solid #d8dbb1;
@@ -274,23 +274,23 @@ body {
 }
 .leafLeft{
   position: absolute;
-  width: 27px;
+  width: 28px;
   height: 28px;
   left: 20px;
   top: 20px;
 }
 .leafMid{
   position: absolute;
-  width: 27px;
+  width: 30px;
   height: 28px;
   left: 50px;
   top: 20px;
 }
 .leafRight{
   position: absolute;
-  width: 27px;
+  width: 28px;
   height: 28px;
-  left: 80px;
+  left: 83px;
   top: 20px;
 }
 .leafSmall{
@@ -311,7 +311,7 @@ body {
   position: absolute;
   width: 40px;
   height: 40px;
-  left: 75px;
+  left: 80px;
   top: 55px;
 }
 .tooltip.show {
