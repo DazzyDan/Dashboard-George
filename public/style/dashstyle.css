@@ -241,7 +241,7 @@ body {
 
 /* Add bubbleborder */
 .bubble {
-  background-image: url('/images/circleBg.png');
+  background-color: #FFFFFF;
   background-size: cover; 
   background-position:50% 50%;
   border: 2px solid #d8dbb1;
