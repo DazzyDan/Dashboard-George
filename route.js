@@ -47,7 +47,7 @@ module.exports = (app, connection, base) => {
 		//connect
 		connection.query(sql, (err, result) => {
 			if (!err) {
-				res.json(result);
+				res.json(result.rows);
 			}
 		});
 	});
@@ -82,6 +82,34 @@ module.exports = (app, connection, base) => {
 			}
 		});
 	});
+	//team chart
+	app.get("/getTeamChart",(req,res) => {
+		const fs = require("fs");
+		//sql
+		let sql = `SELECT * FROM Users_Daily_Log;`;
+		//connect
+		connection.query(sql,(err,result) => {
+			if(!err) {
+				//write the result to a json file and read that json file in bubble_d3js
+				const resultJson = result.rows;
+				res.json(resultJson);
+				// json object to json string
+				const jsonString = JSON.stringify(resultJson, null, 2);
+				// console.log(jsonString)
+
+				//write in json file
+				fs.writeFile("public/jsonFile/teamChart.json", jsonString, (err) => {
+					if (err) {
+						console.log(err);
+					} else {
+						console.log("Team chart file successfully written!");
+					}
+				});
+
+			};
+		});
+	});
+
 
 	app.get("/getAllQuests", (req, res) => {
 		//sql

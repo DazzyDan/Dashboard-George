@@ -14,6 +14,7 @@ dashboardApp.controller(
 		$scope.indicators = [];
 		$scope.bubbleData = [];
 		$scope.compareIndicators = [];
+		$scope.indicatorsYes = [];
 
 
 		//Main Functions
@@ -44,23 +45,19 @@ dashboardApp.controller(
 			(yesterday.getMonth() + 1) +
 			"-" +
 			yesterday.getDate();
-		
+		//today indicators
 		$http.get(URL_INDICATORS + `${date}`).then((res) => {
-			loadIndicators(res.data);
-			$http.get(URL_INDICATORS + `${yesDate}`).then((res) => {
-			loadIndicators(res.data);
-			console.log(res.data);
-			});
+			loadIndicators(res.data);	
 		});
-	
+
 		function loadIndicators(data) {
-			let dau = data.rows[0].users.length;
+			let dau = data[0].users.length;
 			console.log("dau", dau);
 			//Team Mood Scale
-			let tms = data.rows[0].mood;
+			let tms = data[0].mood;
 			console.log("tms", tms);
 			//Player Action Volume=Average number
-			let pav = data.rows[0].daily_action;
+			let pav = data[0].daily_action;
 			console.log("pav", pav);
 			//Team Action Volume= Sum of Player Action Volume
 			let tav = pav * dau;
@@ -68,7 +65,29 @@ dashboardApp.controller(
 			$scope.indicators = { dau: dau, tms: tms, tav: tav, pav: pav };
 			addComparedIndicator($scope.indicators);
 		};
-		
+
+		//yesterday indicators
+		$http.get(URL_INDICATORS + `${yesDate}`).then((res) => {
+			addcomparedYes(res.data);
+			// console.log(res.data);
+		});
+		//compare with yesterday
+		function addcomparedYes(data){
+			let dau = data[0].users.length;
+			console.log("dau", dau);
+			//Team Mood Scale
+			let tms = data[0].mood;
+			console.log("tms", tms);
+			//Player Action Volume=Average number
+			let pav = data[0].daily_action;
+			console.log("pav", pav);
+			//Team Action Volume= Sum of Player Action Volume
+			let tav = pav * dau;
+			console.log("tav", tav);
+			$scope.indicatorsYes = { dau: dau, tms: tms, tav: tav, pav: pav };
+			addComparedIndicator($scope.indicatorsYes);
+		};
+
 		// Save the current one indicator and the one before it
 		function addComparedIndicator(data){
 			if ($scope.compareIndicators.length < 2){
