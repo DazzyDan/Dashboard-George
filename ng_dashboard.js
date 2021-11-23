@@ -103,8 +103,22 @@ dashboardApp.controller(
 			});
 		};
 
-		//  bubble
+		// Bubble
+		// Default display last 7 days' data
+		//7 days ago
+		let defaultDay = new Date(new Date().setDate(new Date().getDate()-7));		
+		var defaultDate = 
+			defaultDay.getFullYear() +
+			"-" +
+			(defaultDay.getMonth() + 1) +
+			"-" +
+			defaultDay.getDate();
 
+		$http.get(URL_RANGE_BUBBLE + `${defaultDate}/${date}`).then((res) => {
+			console.log(URL_RANGE_BUBBLE + `${defaultDate}/${date}`);
+		});
+
+		// Select the range of date
 		$scope.dateRangeChange = function () {
 			const [startDateStr, endDateStr] = $scope.dateSearchRange.split(" - ");
 			let startDate = formatRangeDate(startDateStr);
@@ -114,8 +128,7 @@ dashboardApp.controller(
 				
 			});
 		};
-		
-		  
+			  
 		/**
 		 * Take a string date in format dd/MM/YYYY and
 		 * returns it in the format YYYY-MM-dd
