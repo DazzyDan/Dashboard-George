@@ -45,27 +45,6 @@ dashboardApp.controller(
 			(yesterday.getMonth() + 1) +
 			"-" +
 			yesterday.getDate();
-		//today indicators
-		$http.get(URL_INDICATORS + `${date}`).then((res) => {
-			loadIndicators(res.data);	
-		});
-
-		function loadIndicators(data) {
-			let dau = data[0].users.length;
-			console.log("dau", dau);
-			//Team Mood Scale
-			let tms = data[0].mood;
-			console.log("tms", tms);
-			//Player Action Volume=Average number
-			let pav = data[0].daily_action;
-			console.log("pav", pav);
-			//Team Action Volume= Sum of Player Action Volume
-			let tav = pav * dau;
-			console.log("tav", tav);
-			$scope.indicators = { dau: dau, tms: tms, tav: tav, pav: pav };
-			addComparedIndicator($scope.indicators);
-		};
-
 		//yesterday indicators
 		$http.get(URL_INDICATORS + `${yesDate}`).then((res) => {
 			addcomparedYes(res.data);
@@ -74,26 +53,40 @@ dashboardApp.controller(
 		//compare with yesterday
 		function addcomparedYes(data){
 			let dau = data[0].users.length;
-			console.log("dau", dau);
 			//Team Mood Scale
 			let tms = data[0].mood;
-			console.log("tms", tms);
 			//Player Action Volume=Average number
 			let pav = data[0].daily_action;
-			console.log("pav", pav);
 			//Team Action Volume= Sum of Player Action Volume
 			let tav = pav * dau;
-			console.log("tav", tav);
+			console.log("dau", dau,", tms", tms,", pav", pav,", tav", tav);
 			$scope.indicatorsYes = { dau: dau, tms: tms, tav: tav, pav: pav };
 			addComparedIndicator($scope.indicatorsYes);
 		};
 
+		//today indicators
+		$http.get(URL_INDICATORS + `${date}`).then((res) => {
+			loadIndicators(res.data);	
+		});
+		function loadIndicators(data) {
+			let dau = data[0].users.length;
+			//Team Mood Scale
+			let tms = data[0].mood;
+			//Player Action Volume=Average number
+			let pav = data[0].daily_action;
+			//Team Action Volume= Sum of Player Action Volume
+			let tav = pav * dau;
+			console.log("dau", dau,", tms", tms,", pav", pav,", tav", tav);
+			$scope.indicators = { dau: dau, tms: tms, tav: tav, pav: pav };
+			addComparedIndicator($scope.indicators);
+		};
+		
 		// Save the current one indicator and the one before it
 		function addComparedIndicator(data){
 			if ($scope.compareIndicators.length < 2){
 				$scope.compareIndicators.push(data);
 				console.log('Push one data');
-				// console.log($scope.compareIndicators);
+				console.log($scope.compareIndicators);
 				
 			} else {
 				let tmp = $scope.compareIndicators[1];

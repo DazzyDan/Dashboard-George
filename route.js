@@ -90,7 +90,7 @@ module.exports = (app, connection, base) => {
 		//connect
 		connection.query(sql,(err,result) => {
 			if(!err) {
-				//write the result to a json file and read that json file in bubble_d3js
+				//write the result to a json file and read that json file in chartjs
 				const resultJson = result.rows;
 				res.json(resultJson);
 				// json object to json string
@@ -103,6 +103,35 @@ module.exports = (app, connection, base) => {
 						console.log(err);
 					} else {
 						console.log("Team chart file successfully written!");
+					}
+				});
+
+			};
+		});
+	});
+	//team chart
+	app.get("/getUserChart/:username",(req,res) => {
+		const fs = require("fs");
+		//parameter
+		const user = req.params.username;
+		//sql
+		let sql = `SELECT * FROM EachUsers_Daily_Log WHERE pseudo_from_username[1] = '${user}';`;
+		//connect
+		connection.query(sql,(err,result) => {
+			if(!err) {
+				//write the result to a json file and read that json file in chartjs
+				const resultJson = result.rows;
+				res.json(resultJson);
+				// json object to json string
+				const jsonString = JSON.stringify(resultJson, null, 2);
+				// console.log(jsonString)
+
+				//write in json file
+				fs.writeFile("public/jsonFile/userChart.json", jsonString, (err) => {
+					if (err) {
+						console.log(err);
+					} else {
+						console.log("User chart file successfully written!");
 					}
 				});
 
