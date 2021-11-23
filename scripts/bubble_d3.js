@@ -190,7 +190,7 @@ d3.json('/jsonFile/bubble.json')
         const simulation = d3
                              .forceSimulation()
                              .force("center", d3.forceCenter().x(width / 2).y(height / 2)) // Attraction to the center of the svg area
-                             .force("charge", d3.forceManyBody().strength(300)) // Nodes are attracted one each other of value is > 0
+                             .force("charge", d3.forceManyBody().strength(950)) // Nodes are attracted one each other of value is > 0
                              .force("collide", d3
                                                   .forceCollide()
                                                   .strength(.2)
