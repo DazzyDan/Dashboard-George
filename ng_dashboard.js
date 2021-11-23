@@ -27,7 +27,7 @@ dashboardApp.controller(
 		
 
 		//other indicators can use this list to store
-		// default=>today
+		// default=>today and compared with yesterday's data
 		var today = new Date();
 		var date =
 			today.getFullYear() +
@@ -35,13 +35,22 @@ dashboardApp.controller(
 			(today.getMonth() + 1) +
 			"-" +
 			today.getDate();
-		//console.log(date);
+
+		//yesterday's indicators
+		let yesterday = new Date(new Date().setDate(new Date().getDate()-1));		
+		var yesDate = 
+			yesterday.getFullYear() +
+			"-" +
+			(yesterday.getMonth() + 1) +
+			"-" +
+			yesterday.getDate();
+		
 		$http.get(URL_INDICATORS + `${date}`).then((res) => {
-			console.log(res.data.rows[0]);
-			// console.log(res.data.rows[0].users.length);
-			//Daily Actual User
+			loadIndicators(res.data);
+			$http.get(URL_INDICATORS + `${yesDate}`).then((res) => {
 			loadIndicators(res.data);
 			console.log(res.data);
+			});
 		});
 	
 		function loadIndicators(data) {
@@ -59,9 +68,7 @@ dashboardApp.controller(
 			$scope.indicators = { dau: dau, tms: tms, tav: tav, pav: pav };
 			addComparedIndicator($scope.indicators);
 		};
-
-		//compare with yesterday??
-
+		
 		// Save the current one indicator and the one before it
 		function addComparedIndicator(data){
 			if ($scope.compareIndicators.length < 2){
