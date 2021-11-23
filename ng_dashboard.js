@@ -14,6 +14,7 @@ dashboardApp.controller(
 		$scope.indicators = [];
 		$scope.bubbleData = [];
 		$scope.compareIndicators = [];
+		$scope.indicatorsYes = [];
 
 
 		//Main Functions
@@ -27,7 +28,7 @@ dashboardApp.controller(
 		
 
 		//other indicators can use this list to store
-		// default=>today
+		// default=>today and compared with yesterday's data
 		var today = new Date();
 		var date =
 			today.getFullYear() +
@@ -35,23 +36,28 @@ dashboardApp.controller(
 			(today.getMonth() + 1) +
 			"-" +
 			today.getDate();
-		//console.log(date);
+
+		//yesterday's indicators
+		let yesterday = new Date(new Date().setDate(new Date().getDate()-1));		
+		var yesDate = 
+			yesterday.getFullYear() +
+			"-" +
+			(yesterday.getMonth() + 1) +
+			"-" +
+			yesterday.getDate();
+		//today indicators
 		$http.get(URL_INDICATORS + `${date}`).then((res) => {
-			console.log(res.data.rows[0]);
-			// console.log(res.data.rows[0].users.length);
-			//Daily Actual User
-			loadIndicators(res.data);
-			console.log(res.data);
+			loadIndicators(res.data);	
 		});
-	
+
 		function loadIndicators(data) {
-			let dau = data.rows[0].users.length;
+			let dau = data[0].users.length;
 			console.log("dau", dau);
 			//Team Mood Scale
-			let tms = data.rows[0].mood;
+			let tms = data[0].mood;
 			console.log("tms", tms);
 			//Player Action Volume=Average number
-			let pav = data.rows[0].daily_action;
+			let pav = data[0].daily_action;
 			console.log("pav", pav);
 			//Team Action Volume= Sum of Player Action Volume
 			let tav = pav * dau;
@@ -60,7 +66,27 @@ dashboardApp.controller(
 			addComparedIndicator($scope.indicators);
 		};
 
-		//compare with yesterday??
+		//yesterday indicators
+		$http.get(URL_INDICATORS + `${yesDate}`).then((res) => {
+			addcomparedYes(res.data);
+			// console.log(res.data);
+		});
+		//compare with yesterday
+		function addcomparedYes(data){
+			let dau = data[0].users.length;
+			console.log("dau", dau);
+			//Team Mood Scale
+			let tms = data[0].mood;
+			console.log("tms", tms);
+			//Player Action Volume=Average number
+			let pav = data[0].daily_action;
+			console.log("pav", pav);
+			//Team Action Volume= Sum of Player Action Volume
+			let tav = pav * dau;
+			console.log("tav", tav);
+			$scope.indicatorsYes = { dau: dau, tms: tms, tav: tav, pav: pav };
+			addComparedIndicator($scope.indicatorsYes);
+		};
 
 		// Save the current one indicator and the one before it
 		function addComparedIndicator(data){
@@ -96,8 +122,22 @@ dashboardApp.controller(
 			});
 		};
 
-		//  bubble
+		// Bubble
+		// Default display last 7 days' data
+		//7 days ago
+		let defaultDay = new Date(new Date().setDate(new Date().getDate()-7));		
+		var defaultDate = 
+			defaultDay.getFullYear() +
+			"-" +
+			(defaultDay.getMonth() + 1) +
+			"-" +
+			defaultDay.getDate();
 
+		$http.get(URL_RANGE_BUBBLE + `${defaultDate}/${date}`).then((res) => {
+			console.log(URL_RANGE_BUBBLE + `${defaultDate}/${date}`);
+		});
+
+		// Select the range of date
 		$scope.dateRangeChange = function () {
 			const [startDateStr, endDateStr] = $scope.dateSearchRange.split(" - ");
 			let startDate = formatRangeDate(startDateStr);
@@ -107,8 +147,7 @@ dashboardApp.controller(
 				
 			});
 		};
-		
-		  
+			  
 		/**
 		 * Take a string date in format dd/MM/YYYY and
 		 * returns it in the format YYYY-MM-dd
