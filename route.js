@@ -89,7 +89,7 @@ module.exports = (app, connection, base) => {
 		//connect
 		connection.query(sql, (err, result) => {
 			if (!err) {
-				// console.log(queries);
+				//console.log(result.rows);
 				res.json(result.rows);
 			}
 		});
@@ -105,12 +105,39 @@ module.exports = (app, connection, base) => {
 			};
 		});
 
-		base("ActiveQuests").create(data, function (err, records) {
-			if (err) {
-				console.error(err);
-				return res.status(500).send("Error saving quest.");
+		let sql = `SELECT * FROM ActiveQuests`;
+		//connect
+		connection.query(sql, (err, result) => {
+			if (!err) {
+				if (result.rows.length <= 0) {
+					base("ActiveQuests").create(data, function (err, records) {
+						if (err) {
+							console.error(err);
+							return res.status(500).send("Error saving quest.");
+						}
+						res.status(201).send("Quests added successfully");
+					});
+				} 
+				else {
+					const existingIds = result.rows.map((row) => row.id);
+					base("ActiveQuests").destroy(
+						existingIds,
+						function (err, deletedRecords) {
+							if (err) {
+								console.error(err);
+								return res.status(500).send("Error saving quests.");
+							}
+							base("ActiveQuests").create(data, function (err, records) {
+								if (err) {
+									console.error(err);
+									return res.status(500).send("Error saving quests.");
+								}
+								res.status(201).send("Quests added successfully");
+							});
+						}
+					);
+				}
 			}
-			res.status(201).send("Quests added successfully");
 		});
 	});
 };

@@ -5,7 +5,7 @@
       "https://dl.airtable.com/.attachments/dff7bb800280472b518feea247b9b693/5244f595/014-girl.png"
     ],
     "color": "#556B2F",
-    "participation": "2"
+    "participation": "3"
   },
   {
     "username": "Yassine",
@@ -13,7 +13,7 @@
       "https://dl.airtable.com/.attachments/e0eaecead78d43660323a2d3a294a265/225da840/021-peach.png"
     ],
     "color": "#556B2F",
-    "participation": "2"
+    "participation": "3"
   },
   {
     "username": "Ahahah",
@@ -21,7 +21,7 @@
       "https://dl.airtable.com/.attachments/cb662a502c727b06c257a16dedd502d4/c6f7e4d7/012-boy.png"
     ],
     "color": "#556B2F",
-    "participation": "2"
+    "participation": "4"
   },
   {
     "username": "Alexis7777",
@@ -29,7 +29,7 @@
       "https://dl.airtable.com/.attachments/cb662a502c727b06c257a16dedd502d4/c6f7e4d7/012-boy.png"
     ],
     "color": "#556B2F",
-    "participation": "1"
+    "participation": "3"
   },
   {
     "username": "sylvain",
@@ -37,7 +37,7 @@
       "https://dl.airtable.com/.attachments/cb662a502c727b06c257a16dedd502d4/c6f7e4d7/012-boy.png"
     ],
     "color": "#556B2F",
-    "participation": "5"
+    "participation": "2"
   },
   {
     "username": "Qiudan",
@@ -45,7 +45,7 @@
       "https://dl.airtable.com/.attachments/4912e1ebbc150187a3fa81f3c03cca77/2d77402c/006-butterfly.png"
     ],
     "color": "#556B2F",
-    "participation": "6"
+    "participation": "3"
   },
   {
     "username": "Alexis11",
@@ -53,7 +53,7 @@
       "https://dl.airtable.com/.attachments/cb662a502c727b06c257a16dedd502d4/c6f7e4d7/012-boy.png"
     ],
     "color": "#556B2F",
-    "participation": "7"
+    "participation": "4"
   },
   {
     "username": "Alexis",
@@ -61,15 +61,15 @@
       "https://dl.airtable.com/.attachments/efa6584d9d85049549af6e28604f7ede/c2b9e3eb/004-bear.png"
     ],
     "color": "#556B2F",
-    "participation": "2"
+    "participation": "3"
   },
   {
     "username": "Huiyang",
     "avatar": [
       "https://dl.airtable.com/.attachments/0631535bc3c0bcdf52db6a43c9add2d0/525ce2f3/047-flower.png"
     ],
-    "color": "#32CD32",
-    "participation": "7"
+    "color": "#556B2F",
+    "participation": "4"
   },
   {
     "username": "Raymond",
@@ -77,6 +77,6 @@
       "https://dl.airtable.com/.attachments/a3f73720a6011c72042b9be85b90006d/cf09d368/046-man.png"
     ],
     "color": "#556B2F",
-    "participation": "8"
+    "participation": "4"
   }
 ]
