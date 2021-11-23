@@ -274,6 +274,11 @@ d3.json('/jsonFile/bubble.json')
   }
 );
 };
+
+//display last 7 days' bubble
+bubble('/jsonFile/bubble.json');
+console.log("Initial last 7 days!"); 
+
 // Refresh bubble data
 d3.select("#refreshBtn")
   .on("click", function () {   
