@@ -9,6 +9,8 @@ dashboardApp.controller(
 		let URL_ALL_USERS = "http://localhost:8000/getAllUser";
 		let URL_INDICATORS = "http://localhost:8000/getIndicators/";
 		let URL_RANGE_BUBBLE = "http://localhost:8000/getRangeBubble/";
+		let URL_TEAM_CHART = "http://localhost:8000/getTeamChart";
+		let URL_USER_CHART = "http://localhost:8000/getUserChart/";
 		
 		$scope.dateTest = [];
 		$scope.indicators = [];
@@ -23,8 +25,6 @@ dashboardApp.controller(
 			//console.log(response);
 			$scope.tun = response.data;
 		});
-
-		//compare TUN with the last one??
 		
 
 		//other indicators can use this list to store
@@ -151,6 +151,21 @@ dashboardApp.controller(
 			[day, month, year] = strDate.split("/");
 			const date = new Date(year, month-1, day);
 			return $filter("date")(date, "yyyy-MM-dd");
+		};
+		
+		// Team Chart
+		$http.get(URL_TEAM_CHART).then((res) => {	
+			console.log(res.data)
+		});
+
+		//Personal Chart
+		const userName = $scope.getUserName;
+		console.log(userName);
+		$scope.personalChart = function(){
+			const userName = $scope.getUserName;
+			$http.get(URL_USER_CHART + `${userName}`).then((res) => {
+
+			});
 		}
 	}
 );

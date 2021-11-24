@@ -109,7 +109,7 @@ module.exports = (app, connection, base) => {
 			};
 		});
 	});
-	//team chart
+	//user personal chart
 	app.get("/getUserChart/:username",(req,res) => {
 		const fs = require("fs");
 		//parameter

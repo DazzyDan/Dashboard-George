@@ -160,7 +160,7 @@ var jsonFile = $.ajax({
 function(results) {
     //get label
     var userlabels = results.map(function(e) {
-      date = e.date.split("T")[0];
+      date = e.month;
       // console.log(date)
       return date;
     });
