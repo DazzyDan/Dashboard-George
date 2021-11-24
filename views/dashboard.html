@@ -70,7 +70,15 @@
 				<div class="figureLayout">
 					<img src="/images/george.png" class="imgL">
 					<i class="figureN">GEORGE</i>
-					<i class="bi bi-list button" role="button"></i>
+					<!-- <i class=" dropdown" role="button"></i> -->
+					<div class="dropdown button">
+						<i class="bi bi-list" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">		 
+						</i>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+						  <li><a class="dropdown-item" href="/dashboard">DashBoard</a></li>
+						  <li><a class="dropdown-item" href="/quests">Quests</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -78,18 +86,22 @@
 		<!-- Thumbnail UserChart -->
 		<div class="userF">
 			<canvas id="userChart" class="dialog" onmouseover="myFunction()"></canvas>
-			<div id="dialog_large_chart"></div>
 		</div>
 		<!-- Modal UserChart -->
 		<div id="teammodal" class="modal fade bd-example-modal-lg" tabindex="-1" aria-hidden="true">
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
+					
 					<div class="modal-body">
 						<canvas id="teamChart"></canvas>
 					</div>
 				</div>
 			</div>
 		</div>
+		<!-- try -->
+		
+		
+
 
 		<!-- Search historical indicators of one chosen date -->
 		<!-- frame -->

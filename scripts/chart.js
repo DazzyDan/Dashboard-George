@@ -113,7 +113,7 @@ var jsonFile = $.ajax({
                                                                     display: true,
                                                                     position: 'right',
                                                                     min:0,
-                                                                    max:50,
+                                                                    max:20,
                                                                     title: 
                                                                           {
                                                                             display: true,
@@ -185,6 +185,7 @@ function(results) {
                 datasets:[
                             {
                               label:'User mood value',
+                              yAxisID: 'y',
                               backgroundColor: 'rgba(255, 0, 0, 1)',
                               borderColor: 'rgba(200, 0, 0, 0.8)',
                               data:userMood,
@@ -193,6 +194,7 @@ function(results) {
                             },
                             {
                               label:'Participation',
+                              yAxisID: 'y2',
                               backgroundColor: 'rgba(80, 194, 241, 1)',
                               borderColor: 'rgba(98, 160, 255, 1)',
                               data:userParticipation,
@@ -268,7 +270,7 @@ function(results) {
                                               display: true,
                                               position: 'right',
                                               min:0,
-                                              max:50,
+                                              max:20,
                                               title: 
                                                     {
                                                       display: true,
