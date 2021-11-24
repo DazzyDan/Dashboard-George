@@ -115,7 +115,7 @@ module.exports = (app, connection, base) => {
 		//parameter
 		const user = req.params.username;
 		//sql
-		let sql = `SELECT * FROM EachUsers_Daily_Log WHERE pseudo_from_username[1] = '${user}';`;
+		let sql = `SELECT EXTRACT(MONTH FROM date) as month,ROUND(AVG(mood)) as mood,ROUND(AVG(participation)) as participation FROM EachUsers_Daily_Log WHERE pseudo_from_username[1] = '${user}' GROUP BY EXTRACT(MONTH FROM date);`;
 		//connect
 		connection.query(sql,(err,result) => {
 			if(!err) {
