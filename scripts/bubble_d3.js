@@ -103,7 +103,8 @@ d3.json('/jsonFile/bubble.json')
 
       // Add text in bubble
       var text = svg
-                    .append("g")	
+                    .append("g")
+                    .attr('ng-submit',"personalChart()")	
                     .selectAll("g")
                     .data(data)
                     .join("text")
@@ -113,9 +114,11 @@ d3.json('/jsonFile/bubble.json')
                     .style("font-family","Helvetica Neue")
                     .style("font-weight","Bold")
                     .style("font-size",d=>d.participation*2)
-                    .on("click", function(){
+                    .attr('ng-model',"getUserName")
+                    .on("click", function(d){
                       //trigger modal
                       var myModal = new bootstrap.Modal(document.getElementById('mymodal'), {focus:true});
+                      console.log(d.target);
                       myModal.show();
                     })
                     .call(d3.drag() // call specific function when circle is dragged
