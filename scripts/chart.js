@@ -19,7 +19,7 @@ var jsonFile = $.ajax({
                           
                           //get participation
                           var participation = results.map(function(e) {
-                            return e.participation/10;
+                            return e.participation;
                           });
                           
                           const data=
@@ -28,6 +28,7 @@ var jsonFile = $.ajax({
                                       datasets:[
                                                   {
                                                     label:'Team mood value',
+                                                    yAxisID: 'y',
                                                     backgroundColor: 'rgba(255, 0, 0, 1)',
                                                     borderColor: 'rgba(200, 0, 0, 0.8)',
                                                     data:mood,
@@ -36,6 +37,7 @@ var jsonFile = $.ajax({
                                                   },
                                                   {
                                                     label:'Participation',
+                                                    yAxisID: 'y2',
                                                     backgroundColor: 'rgba(80, 194, 241, 1)',
                                                     borderColor: 'rgba(98, 160, 255, 1)',
                                                     data:participation,
@@ -111,7 +113,7 @@ var jsonFile = $.ajax({
                                                                     display: true,
                                                                     position: 'right',
                                                                     min:0,
-                                                                    max:1,
+                                                                    max:50,
                                                                     title: 
                                                                           {
                                                                             display: true,
@@ -266,7 +268,7 @@ function(results) {
                                               display: true,
                                               position: 'right',
                                               min:0,
-                                              max:1,
+                                              max:50,
                                               title: 
                                                     {
                                                       display: true,

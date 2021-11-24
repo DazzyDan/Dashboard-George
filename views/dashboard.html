@@ -36,14 +36,14 @@
 <body>
 	<div class = "titleDashboard">
 		<i class="bi bi-speedometer dashboard-icon"></i>
-		<p class="title">DashBoard</p>
+		<p class="title" >DashBoard</p>
 	</div>
 	<div ng-controller="DashboardController" class="border">
 		<!-- Bubble Chart -->
 		<section class="bubble">
 			<input type="text" class="datepick" name="daterange" value="2021-11-01 - 2021-11-07" ng-model="dateSearchRange"
 			ng-change="dateRangeChange()" />
-			<button type="button" id = "refreshBtn" class="bi bi-arrow-clockwise btn btn-success refreshBtnColor"></button>
+			<button type="button" id = "refreshBtn" class="bi bi-arrow-clockwise btn btn-success refreshBtnColor" ></button>
 			
 			<div class = "leaves">
 				<img class = "hover" src="/images/hoverIt.png" >
@@ -161,7 +161,7 @@
 			</div>
 		</div>
 		</div>
-
+	</div>
 	<script type="text/javascript">
 		// bubble
 		$(function () {
