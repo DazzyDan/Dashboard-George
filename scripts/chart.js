@@ -7,7 +7,7 @@ var jsonFile = $.ajax({
                       function(results) {
                           //get label
                           var labels = results.map(function(e) {
-                            date = e.date.split("T")[0];
+                            date = e.month;
                             // console.log(date)
                             return date;
                           });
@@ -19,7 +19,7 @@ var jsonFile = $.ajax({
                           
                           //get participation
                           var participation = results.map(function(e) {
-                            return e.daily_action;
+                            return e.participation/10;
                           });
                           
                           const data=

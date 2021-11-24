@@ -86,7 +86,7 @@ module.exports = (app, connection, base) => {
 	app.get("/getTeamChart",(req,res) => {
 		const fs = require("fs");
 		//sql
-		let sql = `SELECT * FROM Users_Daily_Log;`;
+		let sql = `SELECT EXTRACT(MONTH FROM date) as month,ROUND(AVG(mood)) as mood, ROUND(AVG(daily_action)) as participation FROM Users_Daily_Log GROUP BY EXTRACT(MONTH FROM date);`;
 		//connect
 		connection.query(sql,(err,result) => {
 			if(!err) {
