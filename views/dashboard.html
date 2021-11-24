@@ -46,6 +46,7 @@
 			<button type="button" id = "refreshBtn" class="bi bi-arrow-clockwise btn btn-success refreshBtnColor"></button>
 			
 			<div class = "leaves">
+				<img class = "hover" src="/images/hoverIt.png" >
 				<!-- Mood -->
 				<img class = "leafLeft" id = "plantLeft" onmouseover="newPlantLeft()" onmouseout="oldPlantLeft()" src="/images/awsome.png" data-bs-toggle="tooltip" data-bs-placement="top" title="Awsome">
 				<img class = "leafMid" id = "plantMid" onmouseover="newPlantMid()" onmouseout="oldPlantMid()" src="/images/calm.png"data-bs-toggle="tooltip" data-bs-placement="top" title="Calm">
@@ -56,7 +57,7 @@
 				<img class = "leafLarge" id = "plantLarge" onmouseover="newPlantLarge()" onmouseout="oldPlantLarge()" src="/images/circle.png" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Participation High">
 				
 			</div>
-			<!-- <img class = "pot" scr = "/images/pot.png">	 -->
+			
 			<div id="my_dataviz" >
 				<!-- <p> Yellowflower</p> -->
 			</div>
@@ -69,18 +70,18 @@
 				<div class="figureLayout">
 					<img src="/images/george.png" class="imgL">
 					<i class="figureN">GEORGE</i>
-					<i class="bi bi-list button " role="button"></i>
+					<i class="bi bi-list button" role="button"></i>
 				</div>
 			</div>
 		</div>
 					
 		<!-- Thumbnail UserChart -->
 		<div class="userF">
-			<canvas id="UserChart" class="dialog" onclick="myFunction()"></canvas>
+			<canvas id="userChart" class="dialog" onmouseover="myFunction()"></canvas>
 			<div id="dialog_large_chart"></div>
 		</div>
 		<!-- Modal UserChart -->
-		<div id="teammodal" class="modal fade bd-example-modal-lg" tabindex="-1">
+		<div id="teammodal" class="modal fade bd-example-modal-lg" tabindex="-1" aria-hidden="true">
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
 					<div class="modal-body">
@@ -154,7 +155,7 @@
 						<button type="button" id = "perBtnClosePopup" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
 					</div> -->
 					<div class="modal-body">
-						<canvas id="PersonChart"></canvas>
+						<canvas id="personChart"></canvas>
 					</div>
 				</div>
 			</div>

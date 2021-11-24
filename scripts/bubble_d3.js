@@ -16,7 +16,7 @@ function bubble(path){
 d3.json('/jsonFile/bubble.json')
   .then( 
     function(data) {
-      console.log(data);
+      // console.log(data);
       // Size scale for countries
       const size = d3
                      .scaleLinear()
@@ -72,10 +72,7 @@ d3.json('/jsonFile/bubble.json')
                       //trigger modal
                       var myModal = new bootstrap.Modal(document.getElementById('mymodal'), {focus:true});
                       myModal.show();
-                      var PerChart = new Chart(
-                        document.getElementById('PersonChart'),
-                        config2
-                      );
+                      
                     })
                     .on("mouseover", mouseover) // What to do when hovered
                     .on("mousemove", mousemove)
@@ -120,10 +117,6 @@ d3.json('/jsonFile/bubble.json')
                       //trigger modal
                       var myModal = new bootstrap.Modal(document.getElementById('mymodal'), {focus:true});
                       myModal.show();
-                      var PerChart = new Chart(
-                        document.getElementById('PersonChart'),
-                        config2
-                      );
                     })
                     .call(d3.drag() // call specific function when circle is dragged
                     .on("start", dragstarted)
@@ -161,10 +154,6 @@ d3.json('/jsonFile/bubble.json')
                           //trigger modal
                           var myModal = new bootstrap.Modal(document.getElementById('mymodal'), {focus:true});
                           myModal.show();
-                          var PerChart = new Chart(
-                            document.getElementById('PersonChart'),
-                            config2
-                          );
                         })
                         .call(d3.drag() // call specific function when circle is dragged
                         .on("start", dragstarted)
