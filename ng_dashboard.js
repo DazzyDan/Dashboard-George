@@ -159,11 +159,16 @@ dashboardApp.controller(
 		});
 
 		//Personal Chart
-		const userName = $scope.getUserName;
-		console.log(userName);
+		
+		
 		$scope.personalChart = function(){
+			//access the html using document.getElementbyTags("username")
+			//firstNode. 
+			//get the content of the node ==> username
 			const userName = $scope.getUserName;
-			$http.get(URL_USER_CHART + `${userName}`).then((res) => {
+			alert(userName);
+			$http.get(URL_USER_CHART + `${'Qiudan'}`).then((res) => {
+				console.log(URL_USER_CHART + `${'Qiudan'}`);
 
 			});
 		}
