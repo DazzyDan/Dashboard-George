@@ -6,6 +6,8 @@ questApp.controller("QuestController", function QuestController($scope, $http) {
 
 	$scope.quests = [];
 	$scope.selections = [];
+	$scope.submitBtnStatus = false
+
 
 	// Get PredefinedQuests
 	$http
@@ -21,7 +23,7 @@ questApp.controller("QuestController", function QuestController($scope, $http) {
 		.catch((err) => console.log(err));
 
 	$scope.submitQuests = function (history) {
-		console.log($scope.selections);
+		//console.log($scope.selections);
 		const selected = [];
 
 		for (const [key, value] of Object.entries($scope.selections)) {
@@ -38,12 +40,20 @@ questApp.controller("QuestController", function QuestController($scope, $http) {
 			alert("Select 3 daily quests to continue");
 			return;
 		}
+
+		$scope.submitBtnStatus = true
+
+
+
 		console.log(selected);
 		$http
 			.post(URL_SUBMIT_QUESTS, { questIds: selected })
 			.then(function (response) {
 				alert("Quests set successfully");
 			})
-			.catch((e) => console.log(e));
+			.catch((e) => console.log(e)).finally(()=>{
+				$scope.submitBtnStatus = false;
+			});
+		
 	};
 });
