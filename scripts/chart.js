@@ -154,6 +154,7 @@ function myFunction() {
 
 
 // Each user's chart
+
 var jsonFile = $.ajax({
   url: '/jsonFile/userChart.json',
   dataType: 'json'

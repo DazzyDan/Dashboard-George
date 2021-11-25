@@ -160,15 +160,15 @@ dashboardApp.controller(
 
 		//Personal Chart
 		
-		
-		$scope.personalChart = function(){
+		$scope.personalChart = function(userName){
 			//access the html using document.getElementbyTags("username")
 			//firstNode. 
 			//get the content of the node ==> username
-			const userName = $scope.getUserName;
+			// const userName = $scope.userName;
 			alert(userName);
-			$http.get(URL_USER_CHART + `${'Qiudan'}`).then((res) => {
-				console.log(URL_USER_CHART + `${'Qiudan'}`);
+			
+			$http.get(URL_USER_CHART + `${userName}`).then((res) => {
+				console.log(URL_USER_CHART + `${userName}`);
 
 			});
 		}

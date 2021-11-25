@@ -100,11 +100,11 @@ d3.json('/jsonFile/bubble.json')
           };
         };
       };
+      //Obtain the specific user name with clicking
 
       // Add text in bubble
       var text = svg
-                    .append("g")
-                    .attr('ng-click',"personalChart()")
+                    .append("g")                  
                     .selectAll("g")
                     .data(data)
                     .join("text")
@@ -113,15 +113,22 @@ d3.json('/jsonFile/bubble.json')
                     .style("text-anchor", "middle")
                     .style("font-family","Helvetica Neue")
                     .style("font-weight","Bold")
-                    .style("font-size",d=>d.participation*2)
-                    .attr('ng-model',"userName")
+                    .style("font-size",d=>d.participation*2)                   
+                    .attr('id',d=>d.username)                                                      
+                    .on("click", 
+                    function(){
+                      //get userName
+                      userName = $( this ).text();
+                      console.log(userName)
+                      //Trigger angular function
+                      angular.element(document.querySelector('[ng-controller="DashboardController"]')).scope().personalChart(userName);
                     
-                    // .on("click", function(d){
-                    //   //trigger modal
-                    //   var myModal = new bootstrap.Modal(document.getElementById('mymodal'), {focus:true});
-                    //   console.log(d.target);
-                    //   myModal.show();
-                    // })
+                      console.log('Success ;)');
+                      //trigger modal
+                      var myModal = new bootstrap.Modal(document.getElementById('mymodal'), {focus:true});
+                      myModal.show();
+                    }
+                    )
                     .call(d3.drag() // call specific function when circle is dragged
                     .on("start", dragstarted)
                     .on("drag", dragged)
