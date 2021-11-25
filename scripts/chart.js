@@ -147,14 +147,23 @@ var jsonFile = $.ajax({
 
 // Get the chart that opens the modal
 function myFunction() {
-  document.getElementById("userChart").click();
-  var teamModal = new bootstrap.Modal(document.getElementById('teammodal'), {focus:true});
-  teamModal.show();
+    document.getElementById("userChart").click();
+    var teamModal = new bootstrap.Modal(document.getElementById('teammodal'), {focus:true});
+
+    teamModal.show();
+    $('html').on('click', function (e) {
+      if (e.target.id !== 'teammodal') {  
+        teamModal.hide()
+        let backdrop = document.getElementsByClassName('modal-backdrop')
+        if(backdrop){
+          backdrop[0]?.remove()
+        }
+      } 
+  });
 };
 
 
 // Each user's chart
-
 var jsonFile = $.ajax({
   url: '/jsonFile/userChart.json',
   dataType: 'json'
@@ -295,3 +304,4 @@ function(results) {
     );
 }
 );
+
