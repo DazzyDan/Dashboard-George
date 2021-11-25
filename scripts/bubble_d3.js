@@ -65,15 +65,22 @@ d3.json('/jsonFile/bubble.json')
                     .attr("r", d => size(d.participation))
                     .attr("cx", width / 2)
                     .attr("cy", height / 2)
+                    .attr('id',d=>d.username)
                     .style("fill", d => d.color)
                     .style("fill-opacity", 0.8)
                     .attr("stroke", "none")
-                    .on("click", function(){
+                    .on("click", 
+                    function(){
+                      //get userName
+                      userName = $( this ).attr('id');
+                      console.log(userName)
+                      //Trigger angular function
+                      angular.element(document.querySelector('[ng-controller="DashboardController"]')).scope().personalChart(userName);
                       //trigger modal
                       var myModal = new bootstrap.Modal(document.getElementById('mymodal'), {focus:true});
                       myModal.show();
-                      
-                    })
+                    }
+                    )
                     .on("mouseover", mouseover) // What to do when hovered
                     .on("mousemove", mousemove)
                     .on("mouseleave", mouseleave)
@@ -100,11 +107,11 @@ d3.json('/jsonFile/bubble.json')
           };
         };
       };
+      //Obtain the specific user name with clicking
 
       // Add text in bubble
       var text = svg
-                    .append("g")
-                    .attr('ng-click',"personalChart()")
+                    .append("g")                  
                     .selectAll("g")
                     .data(data)
                     .join("text")
@@ -113,15 +120,27 @@ d3.json('/jsonFile/bubble.json')
                     .style("text-anchor", "middle")
                     .style("font-family","Helvetica Neue")
                     .style("font-weight","Bold")
-                    .style("font-size",d=>d.participation*2)
-                    .attr('ng-model',"userName")
+                    .style("font-size",d=>d.participation*2)                   
+                    .attr('id',d=>d.username)                                                      
+                    .on("click", 
+                    function(){
+                      //get userName
+                      userName = $( this ).text();
+                      
+                      //Trigger angular function
+                      angular.element(document.querySelector('[ng-controller="DashboardController"]')).scope().personalChart(userName);
                     
-                    // .on("click", function(d){
-                    //   //trigger modal
-                    //   var myModal = new bootstrap.Modal(document.getElementById('mymodal'), {focus:true});
-                    //   console.log(d.target);
-                    //   myModal.show();
-                    // })
+                      console.log('Success ;)');
+                      //clear canvas
+
+                      //refresh
+
+                      // userChart('/jsonFile/userChart.json')
+                      //trigger modal
+                      var myModal = new bootstrap.Modal(document.getElementById('mymodal'), {focus:true});
+                      myModal.show();
+                    }
+                    )
                     .call(d3.drag() // call specific function when circle is dragged
                     .on("start", dragstarted)
                     .on("drag", dragged)
@@ -153,12 +172,20 @@ d3.json('/jsonFile/bubble.json')
                         .attr('x',width / 2)
                         .attr('y', height / 2)
                         .attr('width', function(d){return d.participation*5;})
+                        .attr('id',d=>d.username)
                         .style('opacity', 0.75)
-                        .on("click", function(){
-                          //trigger modal
-                          var myModal = new bootstrap.Modal(document.getElementById('mymodal'), {focus:true});
-                          myModal.show();
-                        })
+                        .on("click", 
+                          function(){
+                            //get userName
+                            userName = $( this ).attr('id');
+                            
+                            //Trigger angular function
+                            angular.element(document.querySelector('[ng-controller="DashboardController"]')).scope().personalChart(userName);
+                            //trigger modal
+                            var myModal = new bootstrap.Modal(document.getElementById('mymodal'), {focus:true});
+                            myModal.show();
+                          }
+                          )
                         .call(d3.drag() // call specific function when circle is dragged
                         .on("start", dragstarted)
                         .on("drag", dragged)
