@@ -83,13 +83,13 @@ module.exports = (app, connection, base) => {
 		});
 	});
 	//team chart
-	app.get("/getTeamChart",(req,res) => {
+	app.get("/getTeamChart", (req, res) => {
 		const fs = require("fs");
 		//sql
 		let sql = `SELECT EXTRACT(MONTH FROM date) as month,ROUND(AVG(mood)) as mood, ROUND(AVG(daily_action)) as participation FROM Users_Daily_Log GROUP BY EXTRACT(MONTH FROM date) ORDER BY EXTRACT(MONTH FROM date);`;
 		//connect
-		connection.query(sql,(err,result) => {
-			if(!err) {
+		connection.query(sql, (err, result) => {
+			if (!err) {
 				//write the result to a json file and read that json file in chartjs
 				const resultJson = result.rows;
 				res.json(resultJson);
@@ -105,20 +105,19 @@ module.exports = (app, connection, base) => {
 						console.log("Team chart file successfully written!");
 					}
 				});
-
-			};
+			}
 		});
 	});
 	//user personal chart
-	app.get("/getUserChart/:username",(req,res) => {
+	app.get("/getUserChart/:username", (req, res) => {
 		const fs = require("fs");
 		//parameter
 		const user = req.params.username;
 		//sql
 		let sql = `SELECT EXTRACT(MONTH FROM date) as month,ROUND(AVG(mood)) as mood,ROUND(AVG(participation)) as participation FROM EachUsers_Daily_Log WHERE pseudo_from_username[1] = '${user}' GROUP BY EXTRACT(MONTH FROM date);`;
 		//connect
-		connection.query(sql,(err,result) => {
-			if(!err) {
+		connection.query(sql, (err, result) => {
+			if (!err) {
 				//write the result to a json file and read that json file in chartjs
 				const resultJson = result.rows;
 				res.json(resultJson);
@@ -134,11 +133,9 @@ module.exports = (app, connection, base) => {
 						console.log("User chart file successfully written!");
 					}
 				});
-
-			};
+			}
 		});
 	});
-
 
 	app.get("/getAllQuests", (req, res) => {
 		//sql
@@ -174,8 +171,7 @@ module.exports = (app, connection, base) => {
 						}
 						res.status(201).send("Quests added successfully");
 					});
-				} 
-				else {
+				} else {
 					const existingIds = result.rows.map((row) => row.id);
 					base("ActiveQuests").destroy(
 						existingIds,

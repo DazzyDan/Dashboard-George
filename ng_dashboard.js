@@ -59,7 +59,7 @@ dashboardApp.controller(
 			let pav = data[0].daily_action;
 			//Team Action Volume= Sum of Player Action Volume
 			let tav = pav * dau;
-			console.log("dau", dau,", tms", tms,", pav", pav,", tav", tav);
+			//console.log("dau", dau,", tms", tms,", pav", pav,", tav", tav);
 			$scope.indicatorsYes = { dau: dau, tms: tms, tav: tav, pav: pav };
 			addComparedIndicator($scope.indicatorsYes);
 		};
@@ -76,7 +76,7 @@ dashboardApp.controller(
 			let pav = data[0].daily_action;
 			//Team Action Volume= Sum of Player Action Volume
 			let tav = pav * dau;
-			console.log("dau", dau,", tms", tms,", pav", pav,", tav", tav);
+			//console.log("dau", dau,", tms", tms,", pav", pav,", tav", tav);
 			$scope.indicators = { dau: dau, tms: tms, tav: tav, pav: pav };
 			addComparedIndicator($scope.indicators);
 		};
