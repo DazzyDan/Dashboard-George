@@ -132,13 +132,7 @@ function bubble(path) {
 					)
 					.scope()
 					.personalChart(userName);
-
-				console.log("Success ;)");
-				//clear canvas
-
-				//refresh
-
-				// userChart('/jsonFile/userChart.json')
+				
 				//trigger modal
 				var myModal = new bootstrap.Modal(document.getElementById("mymodal"), {
 					focus: true,
@@ -298,18 +292,6 @@ function bubble(path) {
 
 		svg.call(zoom);
 
-		// //legend
-		// svg.append("text").attr("x", 60).attr("y", 100).text("Mood: - ").style("font-size", "15px").attr("alignment-baseline","middle");
-		// svg.append("circle").attr("cx",130).attr("cy",100).attr("r", 10).style("fill", "#32CD32");
-		// svg.append("circle").attr("cx",160).attr("cy",100).attr("r", 10).style("fill", "#228B22");
-		// svg.append("circle").attr("cx",190).attr("cy",100).attr("r", 10).style("fill", "#556B2F");
-		// svg.append("text").attr("x", 220).attr("y", 100).text(" + ").style("font-size", "15px").attr("alignment-baseline","middle");
-
-		// svg.append("text").attr("x", 20).attr("y", 150).text("Participation: - ").style("font-size", "15px").attr("alignment-baseline","middle");
-		// svg.append("circle").attr("cx",132).attr("cy",150).attr("r", 10).style("stroke","black").attr("fill","none");
-		// svg.append("circle").attr("cx",170).attr("cy",150).attr("r", 20).style("stroke","black").attr("fill","none");
-		// svg.append("circle").attr("cx",230).attr("cy",150).attr("r", 30).style("stroke","black").attr("fill","none");
-		// svg.append("text").attr("x", 270).attr("y", 150).text(" + ").style("font-size", "15px").attr("alignment-baseline","middle");
 	});
 }
 

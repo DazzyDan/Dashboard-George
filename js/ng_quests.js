@@ -27,7 +27,7 @@ questApp.controller("QuestController", function QuestController($scope, $http) {
 		const selected = [];
 
 		for (const [key, value] of Object.entries($scope.selections)) {
-			if (value === true) {
+			if (value === true) {				
 				selected.push([key]);
 			}
 		}

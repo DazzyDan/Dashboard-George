@@ -3,7 +3,7 @@ module.exports = (app, connection, base) => {
 	app.get("/ng_dashboard.js", function (req, res) {
 		// send the angular app
 		res.setHeader("Content-Type", "application/javascript");
-		res.sendFile(__dirname + "/ng_dashboard.js");
+		res.sendFile(__dirname + "/js" + "/ng_dashboard.js");
 	});
 
 	app.get("/dashboard", function (req, res) {
@@ -51,6 +51,7 @@ module.exports = (app, connection, base) => {
 			}
 		});
 	});
+
 	// display bubble in the range of selected date
 	app.get("/getRangeBubble/:start_date/:end_date", (req, res) => {
 		const startDate = req.params.start_date;
@@ -82,6 +83,7 @@ module.exports = (app, connection, base) => {
 			}
 		});
 	});
+
 	//team chart
 	app.get("/getTeamChart", (req, res) => {
 		const fs = require("fs");
@@ -108,6 +110,7 @@ module.exports = (app, connection, base) => {
 			}
 		});
 	});
+	
 	//user personal chart
 	app.get("/getUserChart/:username", (req, res) => {
 		const fs = require("fs");

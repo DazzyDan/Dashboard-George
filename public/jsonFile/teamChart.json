@@ -1,5 +1,15 @@
 [
   {
+    "month": 7,
+    "mood": "5",
+    "participation": "15"
+  },
+  {
+    "month": 8,
+    "mood": "5",
+    "participation": "14"
+  },
+  {
     "month": 9,
     "mood": "5",
     "participation": "14"
@@ -13,5 +23,10 @@
     "month": 11,
     "mood": "5",
     "participation": "14"
+  },
+  {
+    "month": 12,
+    "mood": "3",
+    "participation": "8"
   }
 ]
