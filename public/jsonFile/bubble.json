@@ -1,75 +1,27 @@
 [
   {
-    "username": "Huiyang",
-    "avatar": [
-      "https://dl.airtable.com/.attachments/0631535bc3c0bcdf52db6a43c9add2d0/525ce2f3/047-flower.png"
-    ],
-    "color": "#32CD32",
-    "participation": "8"
-  },
-  {
-    "username": "Alexis7777",
-    "avatar": [
-      "https://dl.airtable.com/.attachments/cb662a502c727b06c257a16dedd502d4/c6f7e4d7/012-boy.png"
-    ],
-    "color": "#32CD32",
-    "participation": "7"
-  },
-  {
-    "username": "Jiran",
-    "avatar": [
-      "https://dl.airtable.com/.attachments/dff7bb800280472b518feea247b9b693/5244f595/014-girl.png"
-    ],
-    "color": "#32CD32",
-    "participation": "5"
-  },
-  {
-    "username": "sylvain",
-    "avatar": [
-      "https://dl.airtable.com/.attachments/cb662a502c727b06c257a16dedd502d4/c6f7e4d7/012-boy.png"
-    ],
-    "color": "#556B2F",
-    "participation": "2"
-  },
-  {
     "username": "Qiudan",
     "avatar": [
       "https://dl.airtable.com/.attachments/4912e1ebbc150187a3fa81f3c03cca77/2d77402c/006-butterfly.png"
+    ],
+    "color": "#32CD32",
+    "participation": "12"
+  },
+  {
+    "username": "David",
+    "avatar": [
+      "https://dl.airtable.com/.attachments/09f5369f203cd764d8be79b84979792f/155a6e33/043-boy.png"
     ],
     "color": "#556B2F",
     "participation": "3"
   },
   {
-    "username": "Alexis",
+    "username": "Laurent",
     "avatar": [
-      "https://dl.airtable.com/.attachments/efa6584d9d85049549af6e28604f7ede/c2b9e3eb/004-bear.png"
+      "https://dl.airtable.com/.attachments/023bc6378bf7d68afec564fc909b0e23/d066bf77/001-boy.png"
     ],
     "color": "#556B2F",
-    "participation": "5"
-  },
-  {
-    "username": "Alexis11",
-    "avatar": [
-      "https://dl.airtable.com/.attachments/cb662a502c727b06c257a16dedd502d4/c6f7e4d7/012-boy.png"
-    ],
-    "color": "#556B2F",
-    "participation": "5"
-  },
-  {
-    "username": "Ahahah",
-    "avatar": [
-      "https://dl.airtable.com/.attachments/cb662a502c727b06c257a16dedd502d4/c6f7e4d7/012-boy.png"
-    ],
-    "color": "#556B2F",
-    "participation": "6"
-  },
-  {
-    "username": "Yassine",
-    "avatar": [
-      "https://dl.airtable.com/.attachments/e0eaecead78d43660323a2d3a294a265/225da840/021-peach.png"
-    ],
-    "color": "#556B2F",
-    "participation": "4"
+    "participation": "7"
   },
   {
     "username": "Raymond",
@@ -77,6 +29,38 @@
       "https://dl.airtable.com/.attachments/a3f73720a6011c72042b9be85b90006d/cf09d368/046-man.png"
     ],
     "color": "#556B2F",
-    "participation": "6"
+    "participation": "2"
+  },
+  {
+    "username": "Nathalie",
+    "avatar": [
+      "https://dl.airtable.com/.attachments/14c8dfe6db4973dea2aae821fdf9fa06/f022dcf9/003-girl.png"
+    ],
+    "color": "#556B2F",
+    "participation": "7"
+  },
+  {
+    "username": "Huiyang",
+    "avatar": [
+      "https://dl.airtable.com/.attachments/0631535bc3c0bcdf52db6a43c9add2d0/525ce2f3/047-flower.png"
+    ],
+    "color": "#556B2F",
+    "participation": "3"
+  },
+  {
+    "username": "Alexis7777",
+    "avatar": [
+      "https://dl.airtable.com/.attachments/cb662a502c727b06c257a16dedd502d4/c6f7e4d7/012-boy.png"
+    ],
+    "color": "#556B2F",
+    "participation": "7"
+  },
+  {
+    "username": "Yassine",
+    "avatar": [
+      "https://dl.airtable.com/.attachments/e0eaecead78d43660323a2d3a294a265/225da840/021-peach.png"
+    ],
+    "color": "#32CD32",
+    "participation": "12"
   }
 ]

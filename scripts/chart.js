@@ -88,7 +88,7 @@ var jsonFile = $.ajax({
                                                                   type: 'linear',
                                                                   display: true,
                                                                   position: 'left',
-                                                                  max: 7,
+                                                                  max: 4,
                                                                   min: 0,
                                                                   grid: 
                                                                         {

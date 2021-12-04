@@ -228,7 +228,7 @@ dashboardApp.controller(
 														title: 
 															{
 																display: true,
-																text: 'User mood value & Participation',
+																text: userName + '\'s mood value & Participation',
 																font: 
 																	{
 																		family: 'Open Sans',
@@ -253,7 +253,7 @@ dashboardApp.controller(
 															type: 'linear',
 															display: true,
 															position: 'left',
-															max: 7,
+															max: 4,
 															min: 0,
 															grid: 
 																{
